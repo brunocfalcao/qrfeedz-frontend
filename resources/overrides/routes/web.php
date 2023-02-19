@@ -1,0 +1,3 @@
+<?php
+
+/** QRFeedz routes file. */
