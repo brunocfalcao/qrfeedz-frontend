@@ -44,14 +44,14 @@ class FrontendServiceProvider extends ServiceProvider
     protected function registerCommands(): void
     {
         $this->commands([
-            ResetFrontend::class
+            ResetFrontend::class,
         ]);
     }
 
-    protected function overrideResources():void
+    protected function overrideResources(): void
     {
         $this->publishes([
-            __DIR__ . '/../resources/overrides/' => base_path('/'),
+            __DIR__.'/../resources/overrides/' => base_path('/'),
         ]);
     }
 }
