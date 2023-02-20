@@ -2,6 +2,7 @@
 
 namespace QRFeedz\Frontend;
 
+use Brunocfalcao\Tracer\Middleware\VisitTracing;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use QRFeedz\Frontend\Commands\ResetFrontend;
@@ -32,9 +33,7 @@ class FrontendServiceProvider extends ServiceProvider
 
         Route::middleware([
             'web',
-            //IpTracing::class,
-            //VisitTracing::class,
-            //GoalsTracing::class,
+            VisitTracing::class,
         ])
          ->group(function () use ($routesPath) {
              include $routesPath;
