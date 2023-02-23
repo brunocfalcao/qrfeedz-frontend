@@ -8,5 +8,6 @@
         @vite('resources/css/app.css')
     </head>
     <body class="bg-black antialiased text-white">
+
     </body>
 </html>
