@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\File;
 
 class ResetFrontend extends Command
 {
-    use CanValidateEnvs, CanValidateArguments;
+    use CanValidateArguments, CanValidateEnvs;
 
     protected $signature = 'qrfeedz:reset-frontend';
 
