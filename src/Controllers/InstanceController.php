@@ -26,11 +26,6 @@ class InstanceController extends Controller
      */
     public function new(string $uuid)
     {
-        Country::create([
-            'name' => 'Thailand',
-            'code' => 'TW',
-        ]);
-
         return view('qrfeedz::instance');
     }
 }

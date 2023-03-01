@@ -115,15 +115,8 @@ class ResetFrontend extends Command
 
     protected function publishQRFeedzResources()
     {
-        $this->paragraph('=> Publishing eduka packages assets...');
+        $this->paragraph('=> Publishing qrfeedz packages assets...');
 
-        /*
-         * Eduka packages
-         * brunocfalcao/eduka-nereus
-         * brunocfalcao/eduka-analytics
-         * brunocfalcao/eduka-nova
-         * brunocfalcao/eduka-payments
-         **/
         $this->call('vendor:publish', [
             '--force' => 'true',
             '--provider' => 'QRFeedz\\Frontend\\FrontendServiceProvider',

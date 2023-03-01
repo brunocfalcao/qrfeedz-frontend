@@ -3,6 +3,7 @@
 namespace QRFeedz\Frontend;
 
 use Brunocfalcao\Tracer\Middleware\VisitTracing;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use QRFeedz\Frontend\Commands\ResetFrontend;
@@ -15,6 +16,7 @@ class FrontendServiceProvider extends ServiceProvider
         $this->registerCommands();
         $this->loadViews();
         $this->loadRoutes();
+        $this->registerBladeComponents();
     }
 
     public function register(): void
@@ -52,5 +54,10 @@ class FrontendServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/overrides/' => base_path('/'),
         ]);
+    }
+
+    protected function registerBladeComponents()
+    {
+        Blade::componentNamespace('QRFeedz\\Frontend\\Views\\Components', 'qrfeedz');
     }
 }
