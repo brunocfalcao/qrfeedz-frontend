@@ -16,5 +16,7 @@
         "vue": "3.2.37"
     },
     "dependencies": {
+        "@animxyz/core": "^0.6.6",
+        "jquery": "^3.6.3"
     }
 }

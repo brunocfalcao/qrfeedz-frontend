@@ -11,8 +11,14 @@ import { createApp } from 'vue';
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
-
 const app = createApp({});
+
+// https://animxyz.com/docs
+import '@animxyz/core'
+
+// https://jquery.com
+import jquery from 'jquery';
+window.$ = jquery;
 
 /**
  * The following block of code may be used to automatically register your

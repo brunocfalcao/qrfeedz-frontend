@@ -4,7 +4,6 @@ namespace QRFeedz\Frontend\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
-use QRFeedz\Cube\Models\Country;
 
 class InstanceController extends Controller
 {
