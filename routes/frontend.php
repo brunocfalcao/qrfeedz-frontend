@@ -9,5 +9,4 @@ use QRFeedz\Frontend\Controllers\InstanceController;
 |--------------------------------------------------------------------------
 |
 */
-
-Route::get('instance/{uuid}', [InstanceController::class, 'new']);
+Route::get('instance/{qrcode}', [InstanceController::class, 'new']);
