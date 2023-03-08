@@ -4,6 +4,13 @@ import.meta.glob([
   '../images/**'
   ]);
 
+// https://animxyz.com/docs
+import '@animxyz/core'
+
+// https://jquery.com
+import jquery from 'jquery';
+window.$ = jquery;
+
 import { createApp } from 'vue';
 
 /**
@@ -12,13 +19,6 @@ import { createApp } from 'vue';
  * to use in your application's views. An example is included for you.
  */
 const app = createApp({});
-
-// https://animxyz.com/docs
-import '@animxyz/core'
-
-// https://jquery.com
-import jquery from 'jquery';
-window.$ = jquery;
 
 /**
  * The following block of code may be used to automatically register your

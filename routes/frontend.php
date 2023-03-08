@@ -10,3 +10,5 @@ use QRFeedz\Frontend\Controllers\InstanceController;
 |
 */
 Route::get('instance/{qrcode}', [InstanceController::class, 'new']);
+
+Route::view('/', 'qrfeedz::welcome');

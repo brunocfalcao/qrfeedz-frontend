@@ -1,4 +1,3 @@
-@dd($questionnaire)
 <x-qrfeedz::site>
 
     <x-qrfeedz::head>
@@ -40,45 +39,12 @@
 
             <div class="swiper">
                 <div class="swiper-wrapper">
+                        <!-- Page 1 (welcome page) -->
                         <div class="swiper-slide">
-                            <div class="flex flex-col items-center justify-center h-full gap-16">
-                                <p class="text-3xl font-bold text-center">I would like to</p>
-                                <button id="btn-next" class="inline-flex w-full rounded-4xl bg-gold-500 p-6 items-center justify-between">
-                                    <svg class="h-10 w-10 stroke-monza-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
-                                    </svg>
-                                    <p class="grow font-bold text-xl">Make a complain</p>
-                                    <div class="h-full">
-                                        <svg class="h-10 w-10 stroke-monza-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                </button>
-                                <button class="inline-flex w-full rounded-4xl bg-gold-500 p-6 items-center justify-between">
-                                    <svg class="h-10 w-10 stroke-monza-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
-                                    </svg>
-                                    <p class="grow font-bold text-xl">Suggest something</p>
-                                    <div class="h-full">
-                                        <svg class="h-10 w-10 stroke-monza-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                </button>
-                                <button class="inline-flex w-full rounded-4xl bg-gold-500 p-6 items-center justify-between">
-                                    <svg class="h-10 w-10 stroke-monza-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
-                                    </svg>
-                                    <p class="grow font-bold text-xl">Give a compliment</p>
-                                    <div class="h-full">
-                                        <svg class="h-10 w-10 stroke-monza-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
+                            <x-qr-widget::one-liner></x-qr-widget::one-liner>
                         </div>
-                        <div class="flex flex-col items-center justify-center h-full gap-16 swiper-slide">
+                        <!-- Page 2 (welcome page) -->
+                        <div class="swiper-slide">
                             slide number 2
                         </div>
                     </div>
@@ -89,10 +55,8 @@
             <!-- footer -->
             <div class="mx-3 h-16 p-4 border-x-4 border-b-4 border-monza-500 rounded-b-2xl bg-monza-500">
                 <div class="w-full h-full flex items-center justify-center gap-12 px-12 text-sm text-white underline underline-offset-2">
-                    <p>English</p>
-                    <p>French</p>
-                    <p>German</p>
-                    <p>Italian</p>
+                    <a id="btn-previous">Previous</a>
+                    <a id="btn-next">Next</a>
                 </div>
             </div>
             <!-- /footer -->
@@ -105,10 +69,15 @@
         <script type="module">
             $(document).ready(function() {
                 var swiper = new Swiper(".swiper", {
+                    allowTouchMove: false
                 });
 
                 $("#btn-next").click(function(){
-                    swiper.slideNext();
+                    swiper.slideNext(1000);
+                })
+
+                $("#btn-previous").click(function(){
+                    swiper.slidePrev(1000);
                 })
             });
         </script>
