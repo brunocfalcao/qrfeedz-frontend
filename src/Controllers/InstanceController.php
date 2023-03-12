@@ -26,10 +26,10 @@ class InstanceController extends Controller
      * @param  string  $uuid The qrcode id
      * @return mixed
      */
-    public function new(string $qrcode)
+    public function new(Questionnaire $questionnaire)
     {
         return view('qrfeedz::instance', [
-            'questionnaire' => Questionnaire::firstWhere('qrcode', $qrcode),
+            'questionnaire' => $questionnaire,
         ]);
     }
 }
