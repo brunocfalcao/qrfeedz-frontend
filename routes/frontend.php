@@ -20,6 +20,6 @@ Route::get(
 Route::get(
     'tests/first',
     function () {
-        return redirect('/qrcode/' . Questionnaire::all()->first()->uuid);
+        return redirect('/qrcode/'.Questionnaire::all()->first()->uuid);
     }
 )->name('survey.first');

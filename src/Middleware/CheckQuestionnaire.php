@@ -4,7 +4,6 @@ namespace QRFeedz\Frontend\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
 class CheckQuestionnaire
 {
@@ -12,7 +11,7 @@ class CheckQuestionnaire
     {
         $questionnaire = $request->route('questionnaire');
 
-        return !$questionnaire->isValid() ?
+        return ! $questionnaire->isValid() ?
             $next($request) :
             response()->view('qrfeedz::exceptions.questionnaire-invalid');
     }
