@@ -23,3 +23,5 @@ Route::get(
         return redirect('/qrcode/'.Questionnaire::all()->first()->uuid);
     }
 )->name('survey.first');
+
+Route::view('instance', 'qrfeedz::instance');

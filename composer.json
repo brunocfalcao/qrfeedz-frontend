@@ -21,7 +21,8 @@
         "brunocfalcao/laravel-tracer": "dev-master",
         "brunocfalcao/laravel-logger": "dev-master",
         "brunocfalcao/laravel-helpers": "dev-master",
-        "brunocfalcao/qrfeedz-services": "dev-master"
+        "brunocfalcao/qrfeedz-services": "dev-master",
+        "brunocfalcao/qrfeedz-widgets": "dev-master"
     },
     "autoload": {
         "psr-4": {
