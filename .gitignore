@@ -21,14 +21,3 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
-public/index.php
-resources/overrides/routes/web.php
-routes/frontend.php
-src/Commands/ResetFrontend.php
-src/Controllers/RenderController.php
-src/FrontendServiceProvider.php
-src/Middleware/CheckQuestionnaire.php
-src/Views/Components/Body.php
-src/Views/Components/Head.php
-src/Views/Components/ResponsiveBrackets.php
-src/Views/Components/Site.php
