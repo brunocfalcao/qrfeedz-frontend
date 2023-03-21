@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use QRFeedz\Frontend\Commands\ResetFrontend;
+use QRFeedz\Frontend\Middleware\CheckQuestionnaire;
 
 class FrontendServiceProvider extends ServiceProvider
 {
@@ -17,11 +18,18 @@ class FrontendServiceProvider extends ServiceProvider
         $this->loadViews();
         $this->loadRoutes();
         $this->registerBladeComponents();
+        $this->registerMiddleware();
     }
 
     public function register(): void
     {
         //
+    }
+
+    protected function registerMiddleware()
+    {
+        $this->app['router']
+             ->aliasMiddleware('check-questionnaire', CheckQuestionnaire::class);
     }
 
     protected function loadViews(): void

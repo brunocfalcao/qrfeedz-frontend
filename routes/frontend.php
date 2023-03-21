@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use QRFeedz\Frontend\Controllers\InstanceController;
+use QRFeedz\Cube\Models\Questionnaire;
+use QRFeedz\Frontend\Controllers\RenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,6 +11,15 @@ use QRFeedz\Frontend\Controllers\InstanceController;
 |
 */
 
-Route::view('instance/{code}', 'qrfeedz::instance');
+Route::get(
+    '/qrcode/{questionnaire:uuid}',
+    [RenderController::class, 'renderSurvey']
+)->name('survey.render')
+ ->middleware('check-questionnaire');
 
-//Route::get('instance/{questionnaire:uuid}', [InstanceController::class, 'new']);
+Route::get(
+    'tests/first',
+    function () {
+        return redirect('/qrcode/' . Questionnaire::all()->first()->uuid);
+    }
+)->name('survey.first');

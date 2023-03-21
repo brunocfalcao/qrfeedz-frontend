@@ -8,15 +8,16 @@
         "@vitejs/plugin-vue": "^4.0.0",
         "autoprefixer": "^10.4.13",
         "axios": "^1.1.2",
-        "laravel-vite-plugin": "^0.7.3",
+        "laravel-vite-plugin": "^0.7.4",
         "lodash": "^4.17.19",
         "postcss": "^8.4.19",
         "tailwindcss": "^3.2.4",
-        "vite": "^4.0.0",
+        "vite": "^4.2.1",
         "vue": "3.2.37"
     },
     "dependencies": {
         "@animxyz/core": "^0.6.6",
+        "@rollup/plugin-commonjs": "^24.0.1",
         "jquery": "^3.6.3"
     }
 }

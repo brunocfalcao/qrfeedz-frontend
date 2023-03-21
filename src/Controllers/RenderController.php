@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
 use QRFeedz\Cube\Models\Questionnaire;
 
-class InstanceController extends Controller
+class RenderController extends Controller
 {
     /**
      * Instantiate a new controller instance.
@@ -26,7 +26,7 @@ class InstanceController extends Controller
      * @param  string  $uuid The qrcode id
      * @return mixed
      */
-    public function new(Questionnaire $questionnaire)
+    public function renderSurvey(Questionnaire $questionnaire)
     {
         return view('qrfeedz::instance', [
             'questionnaire' => $questionnaire,
