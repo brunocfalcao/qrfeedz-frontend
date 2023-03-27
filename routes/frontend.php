@@ -17,11 +17,4 @@ Route::get(
 )->name('survey.render')
  ->middleware('check-questionnaire');
 
-Route::get(
-    'tests/first',
-    function () {
-        return redirect('/qrcode/'.Questionnaire::all()->first()->uuid);
-    }
-)->name('survey.first');
-
-Route::view('instance', 'qrfeedz::instance');
+Route::get('framework', [RenderController::class, 'framework']);

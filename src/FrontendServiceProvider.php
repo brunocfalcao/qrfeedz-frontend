@@ -14,7 +14,6 @@ class FrontendServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->overrideResources();
-        $this->registerCommands();
         $this->loadViews();
         $this->loadRoutes();
         $this->registerBladeComponents();
@@ -48,13 +47,6 @@ class FrontendServiceProvider extends ServiceProvider
          ->group(function () use ($routesPath) {
              include $routesPath;
          });
-    }
-
-    protected function registerCommands(): void
-    {
-        $this->commands([
-            ResetFrontend::class,
-        ]);
     }
 
     protected function overrideResources(): void

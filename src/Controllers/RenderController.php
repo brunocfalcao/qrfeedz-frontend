@@ -32,4 +32,10 @@ class RenderController extends Controller
             'questionnaire' => $questionnaire,
         ]);
     }
+
+    public function framework()
+    {
+        return view('qrfeedz::framework')
+                ->with('questionnaire', Questionnaire::all()->first());
+    }
 }
