@@ -18,3 +18,5 @@ Route::get(
  ->middleware('check-questionnaire');
 
 Route::get('framework', [RenderController::class, 'framework']);
+
+Route::view('mobile', 'qrfeedz::mobile');

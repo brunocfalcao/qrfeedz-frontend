@@ -5,6 +5,7 @@ namespace QRFeedz\Frontend\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
 use QRFeedz\Cube\Models\Questionnaire;
+use QRFeedz\Services\Color;
 
 class RenderController extends Controller
 {
@@ -35,7 +36,10 @@ class RenderController extends Controller
 
     public function framework()
     {
+        $questionnaire = Questionnaire::all()->first();
+
         return view('qrfeedz::framework')
-                ->with('questionnaire', Questionnaire::all()->first());
+                ->with('questionnaire', $questionnaire)
+                ->with('color', Color::make($questionnaire->color_primary));
     }
 }
