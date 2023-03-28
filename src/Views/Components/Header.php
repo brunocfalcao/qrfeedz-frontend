@@ -18,8 +18,6 @@ class Header extends Component
 
     public function __construct(Questionnaire $questionnaire, Color $color)
     {
-        dd($questionnaire, $color);
-
         $this->color = $color;
         $this->questionnaire = $questionnaire;
     }

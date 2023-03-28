@@ -20,3 +20,5 @@ Route::get(
 Route::get('framework', [RenderController::class, 'framework']);
 
 Route::view('mobile', 'qrfeedz::mobile');
+
+Route::view('colors', 'qrfeedz::colors');
