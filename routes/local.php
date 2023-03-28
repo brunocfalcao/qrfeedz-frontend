@@ -20,3 +20,7 @@ Route::get('first', [QuestionnaireController::class, 'first']);
 Route::view('mobile', 'qrfeedz::mobile');
 
 Route::view('colors', 'qrfeedz::colors');
+
+Route::view('/view/{view}', function (string $view) {
+    return view('qrfeedz::'.$view);
+});
