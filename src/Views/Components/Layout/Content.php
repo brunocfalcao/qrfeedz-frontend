@@ -1,10 +1,10 @@
 <?php
 
-namespace QRFeedz\Frontend\Views\Components;
+namespace QRFeedz\Frontend\Views\Components\Layout;
 
 use Illuminate\View\Component;
 
-class Site extends Component
+class Content extends Component
 {
     public function __construct()
     {
@@ -13,6 +13,6 @@ class Site extends Component
 
     public function render()
     {
-        return view('qrfeedz::components.layout.site');
+        return view('qrfeedz::components.layout.content');
     }
 }

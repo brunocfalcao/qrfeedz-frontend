@@ -1,6 +1,6 @@
 <?php
 
-namespace QRFeedz\Frontend\Views\Components;
+namespace QRFeedz\Frontend\Views\Components\Support;
 
 use Illuminate\View\Component;
 

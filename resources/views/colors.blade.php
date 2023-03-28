@@ -1,7 +1,6 @@
 @php
-
-    use QRFeedz\Services\Color;
-
+    use QRFeedz\Services\ThemeColor;
+    $color = ThemeColor::make('0066cc');
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +36,7 @@
 <body class="bg-white">
     <div class="h-screen w-screen flex flex-col justify-center items-center">
         <div class="grid grid-cols-4 gap-4">
-            <div class="p-6 bg-[{{ $color->original }}] text-[{{ $color->complementary }}]">->original</div>
+            <div class="p-6 bg-[{{ $color->header('background') }}] text-[{{ $color->header('primary') }}]">->Header Example</div>
             <div class=" p-6 bg-[{{ $color->darken(50) }}] text-[{{ $color->complementary }}]">02</div>
             <div class="bg-red-300 p-6">03</div>
             <div class="bg-red-400 p-6">04</div>

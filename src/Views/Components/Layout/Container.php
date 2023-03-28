@@ -1,6 +1,6 @@
 <?php
 
-namespace QRFeedz\Frontend\Views\Components;
+namespace QRFeedz\Frontend\Views\Components\Layout;
 
 use Illuminate\View\Component;
 use QRFeedz\Cube\Models\Questionnaire;

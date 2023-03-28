@@ -1,6 +1,6 @@
 <?php
 
-namespace QRFeedz\Frontend\Views\Components;
+namespace QRFeedz\Frontend\Views\Components\Header;
 
 use Illuminate\View\Component;
 use QRFeedz\Cube\Models\Questionnaire;
@@ -14,6 +14,7 @@ use QRFeedz\Services\Color;
 class Header extends Component
 {
     public $questionnaire;
+
     public $color;
 
     public function __construct(Questionnaire $questionnaire, Color $color)

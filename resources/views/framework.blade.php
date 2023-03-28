@@ -1,18 +1,25 @@
-<x-qrfeedz::site>
+<x-qrfeedz::layout.site>
 
-    <x-qrfeedz::head>
+    <x-qrfeedz::layout.head>
         <title>{{ $questionnaire->title }}</title>
         @vite('resources/css/app.css')
-    </x-qrfeedz::head>
+    </x-qrfeedz::layout.head>
 
-    <x-qrfeedz::body>
+    <x-qrfeedz::layout.body>
 
-        <x-qrfeedz::container   :questionnaire="$questionnaire" :color="$color">
-            <x-qrfeedz::header  :questionnaire="$questionnaire" :color="$color"></x-qrfeedz::header>
-            <x-qrfeedz::content :questionnaire="$questionnaire" :color="$color"></x-qrfeedz::content>
-            <x-qrfeedz::footer  :questionnaire="$questionnaire" :color="$color"></x-qrfeedz::footer>
-        </x-qrfeedz::container>
+        <x-qrfeedz::layout.container>
+
+            @foreach($questionnaire->pages as $page)
+
+                {{-- Each page is a dynamic component --}}
+                <x-dynamic-component
+                    :questionnaire="$questionnaire"
+                    :component="$page->targetViewComponent()"/>
+
+            @endforeach
+
+        </x-qrfeedz::layout.container>
 
         @vite('resources/js/app.js')
-    </x-qrfeedz::body>
-</x-qrfeedz::site>
+    </x-qrfeedz::layout.body>
+</x-qrfeedz::layout.site>

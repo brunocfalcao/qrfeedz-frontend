@@ -6,7 +6,6 @@ use Brunocfalcao\Tracer\Middleware\VisitTracing;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use QRFeedz\Frontend\Commands\ResetFrontend;
 use QRFeedz\Frontend\Middleware\CheckQuestionnaire;
 
 class FrontendServiceProvider extends ServiceProvider
@@ -38,7 +37,7 @@ class FrontendServiceProvider extends ServiceProvider
 
     protected function loadRoutes(): void
     {
-        $routesPath = __DIR__.'/../routes/frontend.php';
+        $routesPath = __DIR__.'/../routes/' . app()->environment() .'.php';
 
         Route::middleware([
             'web',
