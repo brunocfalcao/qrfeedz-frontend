@@ -17,7 +17,7 @@ Route::get(
 
 Route::get('first', [QuestionnaireController::class, 'first']);
 
-Route::view('mobile', 'qrfeedz::mobile');
+//Route::view('mobile', 'qrfeedz::mobile');
 
 Route::view('colors', 'qrfeedz::colors');
 
