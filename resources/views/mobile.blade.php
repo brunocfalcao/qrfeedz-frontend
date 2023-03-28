@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>My Fullscreen Mobile App</title>
+    <title>QRfeedz</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/toastify@1.13.2/toastify.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify@1.13.2/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <style>
         /* Remove margin and padding from the body */
         body {
@@ -29,7 +29,7 @@
         } else {
             // Show a toast message if the app is not running as a standalone app
             Toastify({
-                text: "If you bookmark it to open from the Home Screen you get a better user experience",
+                text: "Add it to the home screen",
                 duration: 5000,
                 newWindow: true,
                 close: true,

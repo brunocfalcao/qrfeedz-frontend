@@ -1,6 +1,6 @@
 <?php
 
-namespace QRFeedz\Frontend\Views\Components\Layout;
+namespace QRFeedz\Frontend\Views\Components\Html;
 
 use Illuminate\View\Component;
 
@@ -13,6 +13,6 @@ class Body extends Component
 
     public function render()
     {
-        return view('qrfeedz::components.layout.body');
+        return view('qrfeedz::components.html.body');
     }
 }

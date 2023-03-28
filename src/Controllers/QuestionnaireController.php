@@ -3,6 +3,7 @@
 namespace QRFeedz\Frontend\Controllers;
 
 use App\Http\Controllers\Controller;
+use Brunocfalcao\Cerebrus\Cerebrus;
 use Illuminate\Support\Facades\App;
 use QRFeedz\Cube\Models\Questionnaire;
 use QRFeedz\Services\Color;
@@ -30,9 +31,9 @@ class QuestionnaireController extends Controller
      */
     public function render(Questionnaire $questionnaire)
     {
-        return view('qrfeedz::framework', [
-            'questionnaire' => $questionnaire,
-        ]);
+        (new Cerebrus())->set('questionnaire', $questionnaire);
+
+        return view('qrfeedz::framework');
     }
 
     /**
@@ -43,8 +44,9 @@ class QuestionnaireController extends Controller
      */
     public function first()
     {
-        return view('qrfeedz::framework', [
-            'questionnaire' => Questionnaire::all()->first(),
-        ]);
+        $questionnaire = Questionnaire::all()->first();
+        (new Cerebrus())->set('questionnaire', $questionnaire);
+
+        return view('qrfeedz::framework');
     }
 }

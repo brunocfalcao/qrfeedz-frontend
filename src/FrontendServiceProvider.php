@@ -2,6 +2,7 @@
 
 namespace QRFeedz\Frontend;
 
+use Brunocfalcao\Cerebrus\Cerebrus;
 use Brunocfalcao\Tracer\Middleware\VisitTracing;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,16 @@ class FrontendServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        //
+        $this->app->bind('frontend-cerebrus', function ($app) {
+            /**
+             * On this case we are using a specific Cerebrus object without
+             * a "path" parameter, because this bind is just used as a
+             * Cerebrus Facade to be used in the blade templates, as
+             *
+             * $survey = Cerebrus::get('questionnaire');
+             */
+            return new Cerebrus();
+        });
     }
 
     protected function registerMiddleware()

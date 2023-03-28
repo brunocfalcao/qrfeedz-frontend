@@ -21,6 +21,6 @@ Route::get('first', [QuestionnaireController::class, 'first']);
 
 Route::view('colors', 'qrfeedz::colors');
 
-Route::view('/view/{view}', function (string $view) {
+Route::get('view/{view}', function (string $view) {
     return view('qrfeedz::'.$view);
 });

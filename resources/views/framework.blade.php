@@ -1,25 +1,24 @@
+@php
+    $survey = Cerebrus::get('questionnaire');
+@endphp
 <x-qrfeedz::layout.site>
 
-    <x-qrfeedz::layout.head>
-        <title>{{ $questionnaire->title }}</title>
+    <x-qrfeedz::html.head>
+        <title>{{ $survey->title }}</title>
         @vite('resources/css/app.css')
-    </x-qrfeedz::layout.head>
+    </x-qrfeedz::html.head>
 
-    <x-qrfeedz::layout.body>
+    <x-qrfeedz::html.body>
 
         <x-qrfeedz::layout.container>
 
-            @foreach($questionnaire->pages as $page)
-
+            @foreach($survey->pages as $page)
                 {{-- Each page is a dynamic component --}}
-                <x-dynamic-component
-                    :questionnaire="$questionnaire"
-                    :component="$page->targetViewComponent()"/>
-
+                <x-dynamic-component :component="$page->targetViewComponent()" />
             @endforeach
 
         </x-qrfeedz::layout.container>
 
         @vite('resources/js/app.js')
-    </x-qrfeedz::layout.body>
+    </x-qrfeedz::html.body>
 </x-qrfeedz::layout.site>
