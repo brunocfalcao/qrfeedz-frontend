@@ -19,7 +19,7 @@
             Header
         </div>
     </header>
-    <main class="bg-green-500 flex-grow w-full overflow-y-auto rounded-t-[2rem] mt-[-2rem]">
+    <main class="bg-green-500 flex-grow w-full overflow-y-auto">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
             Content
         </div>
