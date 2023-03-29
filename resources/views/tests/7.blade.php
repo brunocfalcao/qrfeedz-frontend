@@ -36,7 +36,11 @@
         $(document).ready(function() {
             // Set body height to 100% in full-screen mode on iOS
             if (window.navigator.standalone === true || (window.matchMedia('(display-mode: standalone)').matches && /(iPad|iPhone|iPod)/g.test(navigator.userAgent))) {
-                $('body').css('height', '100%');
+                $('body').css({
+                    height: 'calc(var(--safe-area-inset-top) + var(--safe-area-inset-bottom) + 100vh)',
+                    paddingTop: 'var(--safe-area-inset-top)',
+                    paddingBottom: 'var(--safe-area-inset-bottom)',
+                });
                 return;
             }
 
