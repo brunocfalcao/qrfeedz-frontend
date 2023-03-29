@@ -8,10 +8,7 @@
     />
     <title>Hello World</title>
     <!-- Include Tailwind CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Add some padding to the bottom of the body to avoid overlap with the bottom toolbar */
       body {
@@ -30,11 +27,11 @@
   </head>
   <body class="flex flex-col justify-between bg-gray-100">
     <!-- Header -->
-    <header class="bg-blue-500 h-16 flex justify-center items-center">
+    <header class="bg-green-500 h-16 flex justify-center items-center">
       <h1 class="text-white text-2xl">Header</h1>
     </header>
     <!-- Content -->
-    <div class="content bg-yellow-500 p-8">
+    <div class="content bg-blue-500 p-8">
       <h1 class="text-center text-4xl mb-8">Hello, world!</h1>
       <p class="text-lg">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit
@@ -45,7 +42,7 @@
       </p>
     </div>
     <!-- Footer -->
-    <footer class="bg-green-500 h-16 flex justify-center items-center">
+    <footer class="bg-yellow-500 h-16 flex justify-center items-center">
       <h1 class="text-white text-2xl">Footer</h1>
     </footer>
   </body>
