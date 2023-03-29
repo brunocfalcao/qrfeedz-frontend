@@ -6,11 +6,9 @@ use Illuminate\View\Component;
 
 class Head extends Component
 {
-    public $title;
-
-    public function __construct($title = null)
+    public function __construct()
     {
-        $this->title = $title;
+        //
     }
 
     public function render()

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Brunocfalcao\Cerebrus\Cerebrus;
 use Illuminate\Support\Facades\App;
 use QRFeedz\Cube\Models\Questionnaire;
-use QRFeedz\Services\Color;
 
 class QuestionnaireController extends Controller
 {
@@ -26,7 +25,6 @@ class QuestionnaireController extends Controller
      * From the qr code id, we can fetch all the information needed to
      * render the questionnaire, and all the logic attached to it.
      *
-     * @param  Questionnaire $questionnaire
      * @return mixed
      */
     public function render(Questionnaire $questionnaire)
@@ -39,7 +37,7 @@ class QuestionnaireController extends Controller
     /**
      * Just a quick test, that finds the first questionnaire and renders it.
      *
-     * @param  Questionnaire $questionnaire
+     * @param  Questionnaire  $questionnaire
      * @return mixed
      */
     public function first()

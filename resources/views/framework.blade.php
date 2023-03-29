@@ -1,4 +1,5 @@
 @php
+    // Obtain the questionnaire that is in session (added by the controller).
     $survey = Cerebrus::get('questionnaire');
 @endphp
 <x-qrfeedz::layout.site>

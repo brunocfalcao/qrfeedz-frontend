@@ -3,20 +3,16 @@
 namespace QRFeedz\Frontend\Views\Components\Layout;
 
 use Illuminate\View\Component;
-use QRFeedz\Cube\Models\Questionnaire;
 
 class Container extends Component
 {
-    public $questionnaire;
-
-    public function __construct(Questionnaire $questionnaire)
+    public function __construct()
     {
-        $this->questionnaire = $questionnaire;
+        //
     }
 
     public function render()
     {
-        return view('qrfeedz::components.layout.container')
-               ->with('sharedQuestionnaire', $this->questionnaire);
+        return view('qrfeedz::components.layout.container');
     }
 }

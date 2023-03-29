@@ -1,3 +1,3 @@
-<body {{ $attributes }}>
+<body class="antialiased">
 {{ $slot }}
 </body>
