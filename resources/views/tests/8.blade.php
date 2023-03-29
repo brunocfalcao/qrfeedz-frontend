@@ -25,7 +25,7 @@
         </div>
         <!-- Add more content here to see the scrollable behavior -->
     </main>
-    <footer class="bg-red-500 flex-none w-full" style="height: 5%;">
+    <footer class="bg-red-500 flex-none w-full" style="height: 7%;">
         <div class="text-center text-white font-bold py-1 flex items-center justify-center h-full">
             Footer
         </div>
