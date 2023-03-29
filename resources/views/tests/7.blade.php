@@ -34,19 +34,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Set body height and padding in full-screen mode on iOS
-            if (window.navigator.standalone === true || (window.matchMedia('(display-mode: standalone)').matches && /(iPad|iPhone|iPod)/g.test(navigator.userAgent))) {
-                const height = window.innerHeight;
-                const topInset = window.visualViewport.offsetTop;
-                const bottomInset = height - window.visualViewport.height - topInset;
-                $('body').css({
-                    height: 'calc(' + height + 'px + var(--safe-area-inset-bottom) + var(--safe-area-inset-top))',
-                    paddingTop: topInset,
-                    paddingBottom: bottomInset,
-                });
-                return;
-            }
-
             setBodyHeight();
             $(window).on('resize', setBodyHeight);
 
