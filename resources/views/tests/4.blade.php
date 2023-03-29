@@ -7,12 +7,11 @@
     <title>Mobile Template</title>
     <style>
         body, html {
-            height: 100%;
             margin: 0;
         }
     </style>
 </head>
-<body class="flex flex-col h-screen">
+<body class="flex flex-col">
     <header class="bg-blue-500 flex-none w-full" style="height: 15%;">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
             Header
@@ -29,5 +28,15 @@
             Footer
         </div>
     </footer>
+
+    <script>
+        function setBodyHeight() {
+            const visibleHeight = window.innerHeight;
+            document.body.style.height = visibleHeight + 'px';
+        }
+
+        setBodyHeight();
+        window.addEventListener('resize', setBodyHeight);
+    </script>
 </body>
 </html>
