@@ -33,7 +33,7 @@
 </head>
 <body class="bg-white">
     <div class="h-screen w-screen flex flex-col justify-center items-center border-4 border-red-500 safe-area-container">
-        <h1 class="text-3xl font-bold text-gray-700 mb-4">Adaptative 3</h1>
+        <h1 class="text-3xl font-bold text-gray-700 mb-4">Adaptative 2nd try</h1>
         <p class="text-lg text-gray-500">Welcome to my app!</p>
     </div>
     <script>
