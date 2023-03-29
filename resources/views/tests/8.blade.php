@@ -20,38 +20,8 @@
         </div>
     </header>
     <main class="bg-green-500 flex-grow w-full overflow-y-auto rounded-t-[2rem] mt-[-2rem]">
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content FIRST -----
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
+        <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
             Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content
-        </div>
-        <div class="bg-indigo-500 text-center text-white font-bold py-2 flex items-center justify-center h-64">
-            Content LAST -----
         </div>
     </main>
     <footer class="bg-red-500 flex-none w-full rounded-b-[2rem]" style="height: 7%;">
