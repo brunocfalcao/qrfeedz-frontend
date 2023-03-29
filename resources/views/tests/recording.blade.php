@@ -2,6 +2,22 @@
 <html>
   <head>
     <title>Voice Recorder</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      button {
+        font-size: 3em;
+        padding: 20px;
+        margin: 20px;
+      }
+    </style>
   </head>
   <body>
     <button id="record-button">Record</button>
