@@ -13,19 +13,18 @@
         }
     </style>
 </head>
-<body class="flex flex-col">
-    <header class="bg-blue-500 flex-none w-full" style="height: 15%;">
+<body class="flex flex-col bg-white">
+    <header class="bg-blue-500 flex-none w-full rounded-t-[2rem]" style="height: 15%;">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
             Header
         </div>
     </header>
-    <main class="bg-green-500 flex-grow w-full overflow-y-auto">
+    <main class="bg-green-500 flex-grow w-full overflow-y-auto rounded-t-[2rem] mt-[-2rem]">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
             Content
         </div>
-        <!-- Add more content here to see the scrollable behavior -->
     </main>
-    <footer class="bg-red-500 flex-none w-full" style="height: 5%;">
+    <footer class="bg-red-500 flex-none w-full rounded-b-[2rem]" style="height: 7%;">
         <div class="text-center text-white font-bold py-1 flex items-center justify-center h-full">
             Footer
         </div>
