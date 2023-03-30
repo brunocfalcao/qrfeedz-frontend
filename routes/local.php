@@ -24,3 +24,7 @@ Route::view('colors', 'qrfeedz::colors');
 Route::get('tests/{view}', function (string $view) {
     return view('qrfeedz::tests.'.$view);
 });
+
+Route::get('progress/{view}', function (string $view) {
+    return view('qrfeedz::tests.progress.'.$view);
+});
