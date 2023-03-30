@@ -16,7 +16,7 @@
     </style>
 </head>
 <body class="flex flex-col bg-white mx-3 my-3 overflow-y-hidden">
-    <header class="bg-blue-500 flex-none w-full rounded-t-[2rem]" style="height: 15%;">
+    <header class="bg-blue-500 flex-none w-full rounded-t-[2rem] h-40">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
             Header
         </div>
