@@ -31,29 +31,32 @@
       const resetButton = document.getElementById('reset-button');
       let recorder;
       let audioBlob;
-
-      navigator.mediaDevices.getUserMedia({ audio: true })
-        .then(stream => {
-          recorder = new MediaRecorder(stream);
-
-          recorder.addEventListener('dataavailable', event => {
-            audioBlob = event.data;
-          });
-        })
-        .catch(error => {
-          console.error('Error accessing microphone', error);
-        });
+      let stream;
 
       recordButton.addEventListener('click', () => {
-        recorder.start();
-        recordButton.disabled = true;
-        stopButton.disabled = false;
-        playButton.disabled = true;
-        resetButton.disabled = true;
+        navigator.mediaDevices.getUserMedia({ audio: true })
+          .then(_stream => {
+            stream = _stream;
+            recorder = new MediaRecorder(stream);
+
+            recorder.addEventListener('dataavailable', event => {
+              audioBlob = event.data;
+            });
+
+            recorder.start();
+            recordButton.disabled = true;
+            stopButton.disabled = false;
+            playButton.disabled = true;
+            resetButton.disabled = true;
+          })
+          .catch(error => {
+            console.error('Error accessing microphone', error);
+          });
       });
 
       stopButton.addEventListener('click', () => {
         recorder.stop();
+        stream.getTracks().forEach(track => track.stop());
         recordButton.disabled = false;
         stopButton.disabled = true;
         playButton.disabled = false;
@@ -63,6 +66,10 @@
       playButton.addEventListener('click', () => {
         const audio = new Audio(URL.createObjectURL(audioBlob));
         audio.play();
+        playButton.disabled = true;
+        audio.addEventListener('ended', () => {
+          playButton.disabled = false;
+        });
       });
 
       resetButton.addEventListener('click', () => {
