@@ -31,7 +31,9 @@
     </header>
     <main class="bg-green-500 flex-grow w-full overflow-y-auto rounded-t-[2rem] mt-[-2rem]">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full px-5">
-            Content
+<svg width="81" height="18" viewBox="0 0 81 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 18V18C7.66561 18 15.0111 14.858 20.315 9.3235V9.3235C31.4413 -2.28657 50.0289 -2.31763 61.1553 9.29244L61.5431 9.69713C66.626 15.001 73.6538 18 81 18V18H0Z" fill="#FFBC0D"/>
+</svg>
         </div>
     </main>
     <footer class="bg-red-500 flex-none w-full rounded-b-[2rem] mb-6 h-14">

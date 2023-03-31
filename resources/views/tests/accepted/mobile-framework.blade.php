@@ -25,6 +25,7 @@
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full px-5">
             Content
         </div>
+
     </main>
     <footer class="bg-red-500 flex-none w-full rounded-b-[2rem] mb-6 h-16">
         <div class="text-center text-white font-bold py-1 flex items-center justify-center h-full px-5">
