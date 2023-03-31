@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 use QRFeedz\Frontend\Controllers\QuestionnaireController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +39,16 @@ Route::get('image/{imageName}', function ($imageName) {
     $headers = ['Content-Type' => $type];
     $content = File::get($path);
     return Response::make($content, 200, $headers);
+});
+
+Route::get('/upload', function () {
+    return view('qrfeedz::upload');
+});
+
+Route::post('/upload', function (Request $request) {
+    $file = $request->file('file');
+    $filename = $file->getClientOriginalName();
+    Storage::putFileAs('public', $file, $filename);
+    $url = Storage::url($filename);
+    return view('qrfeedz::upload')->with('url', $url);
 });
