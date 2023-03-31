@@ -1,11 +1,11 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
-use QRFeedz\Frontend\Controllers\QuestionnaireController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use QRFeedz\Frontend\Controllers\QuestionnaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +34,11 @@ Route::get('progress/{view}', function (string $view) {
 });
 
 Route::get('image/{imageName}', function ($imageName) {
-    $path = __DIR__ . ("/../resources/images/{$imageName}");
+    $path = __DIR__.("/../resources/images/{$imageName}");
     $type = File::mimeType($path);
     $headers = ['Content-Type' => $type];
     $content = File::get($path);
+
     return Response::make($content, 200, $headers);
 });
 
