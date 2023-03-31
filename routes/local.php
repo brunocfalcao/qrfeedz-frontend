@@ -41,6 +41,7 @@ Route::get('image/{imageName}', function ($imageName) {
     return Response::make($content, 200, $headers);
 });
 
+/*
 Route::get('/upload', function () {
     return view('qrfeedz::upload');
 });
@@ -52,3 +53,4 @@ Route::post('/upload', function (Request $request) {
     $url = Storage::url($filename);
     return view('qrfeedz::upload')->with('url', $url);
 });
+*/
