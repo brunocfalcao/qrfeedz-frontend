@@ -43,7 +43,7 @@
     </header>
     <!-- /header section -->
     <main class="bg-white flex-grow w-full overflow-y-auto border-[#FFBC0d] rounded-t-[2rem] mt-[-2rem]">
-        <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full px-5 border-2 border-[#FFBC0d]">
+        <div class="text-center font-bold py-2 flex items-center justify-center h-full px-5 border-4 border-[#FFBC0d]">
             Content
         </div>
     </main>
