@@ -13,6 +13,6 @@ class ResponsiveBrackets extends Component
 
     public function render()
     {
-        return view('qrfeedz::components.layout.responsive-brackets');
+        return view('qrfeedz::components.support.responsive-brackets');
     }
 }
