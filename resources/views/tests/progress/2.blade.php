@@ -45,7 +45,7 @@
     <!-- content section -->
     <main class="bg-white flex-grow w-full overflow-y-auto border-[#FFBC0d] rounded-t-[2rem] mt-[-2rem]">
         <!-- content main area -->
-        <div class="text-center py-2 flex flex-col items-center justify-center h-full px-5 border-4 border-[#FFBC0d]">
+        <div class="text-center py-2 flex flex-col items-center justify-center h-full border-4 border-[#FFBC0d]">
 
             <div class="w-5/6">
 
