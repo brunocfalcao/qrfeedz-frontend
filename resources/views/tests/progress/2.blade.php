@@ -165,7 +165,6 @@
         </div>
     </footer>
 
-    @vite('resources/js/app.js')
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
         // Wait for the DOM to be ready before executing the rest of the code
