@@ -47,7 +47,7 @@
         <!-- content main area -->
         <div class="text-center py-2 flex flex-col items-center justify-center h-full border-4 border-[#FFBC0d]">
 
-            <div class="w-[95%]">
+            <div class="w-[90%]">
 
                 <p class="text-xl font-bold px-3 pb-8">Let's start:</p>
 
