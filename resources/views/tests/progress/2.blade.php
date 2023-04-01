@@ -25,17 +25,17 @@
 </head>
 <body class="flex flex-col bg-white mx-3 my-3 overflow-y-hidden">
     <!-- header section -->
-    <header class="bg-[#FFBC0d] flex-none w-full rounded-t-[2rem] h-40">
+    <header class="bg-[#DA291C] flex-none w-full rounded-t-[2rem] h-40">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
 
             <!-- header content section -->
             <div class="-mt-[2.5rem] text-center">
-                <div class="w-24 mx-auto">
+                <div class="w-24 mx-auto text-[#FFC72C]">
                     <!-- logo -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40.605 -59.125 351.91 354.75"><path d="M194.5 16.8c23.3 0 42.2 98.3 42.2 219.7h34C270.7 105.8 236.4 0 194.4 0c-24 0-45.2 31.7-59.2 81.5C121.2 31.7 100 0 76.2 0 34.2 0 0 105.7 0 236.4h34C34 115 52.7 16.8 76 16.8s42.2 90.8 42.2 202.8H152c0-112 19-202.8 42.3-202.8" fill="currentColor"/></svg>
                     <!-- /logo -->
                 </div>
-                <p class="text-white">McDonalds Kaiseraugst</p>
+                <p class="text-[#FFC72C]">McDonalds Kaiseraugst</p>
             </div>
             <!-- /header content section -->
 
@@ -43,9 +43,9 @@
     </header>
     <!-- /header section -->
     <!-- content section -->
-    <main class="bg-white flex-grow w-full overflow-y-auto border-[#FFBC0d] rounded-t-[2rem] mt-[-2rem]">
+    <main class="bg-white flex-grow w-full overflow-y-auto rounded-t-[2rem] mt-[-2rem]">
         <!-- content main area -->
-        <div class="text-center py-2 flex flex-col items-center justify-center h-full border-4 border-[#FFBC0d]">
+        <div class="text-center py-2 flex flex-col items-center justify-center h-full border-4 border-[#DA291C]">
             <div class="w-[90%]">
                 <p class="text-xl font-bold px-3 pb-8">Choose an option</p>
                 <div class="flex flex-col gap-12">
@@ -132,22 +132,22 @@
         <!-- /content area -->
     </main>
     <!-- /content section-->
-    <footer class="bg-[#FFBC0d] flex-none w-full rounded-b-[2rem] mb-6 h-14">
+    <footer class="bg-[#DA291C] flex-none w-full rounded-b-[2rem] mb-6 h-14">
         <div class="text-white font-bold py-1 flex items-center justify-between h-full px-[15%]">
             <!-- Home footer link -->
             <div class="-mt-6 flex flex-col items-center justify-center">
-                <div class="w-20">
+                <div class="w-20 text-[#DA291C]">
                     <svg viewBox="0 0 81 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 18V18C7.66561 18 15.0111 14.858 20.315 9.3235V9.3235C31.4413 -2.28657 50.0289 -2.31763 61.1553 9.29244L61.5431 9.69713C66.626 15.001 73.6538 18 81 18V18H0Z" fill="#FFBC0D"/>
+                        <path d="M0 18V18C7.66561 18 15.0111 14.858 20.315 9.3235V9.3235C31.4413 -2.28657 50.0289 -2.31763 61.1553 9.29244L61.5431 9.69713C66.626 15.001 73.6538 18 81 18V18H0Z" fill="currentColor"/>
                     </svg>
                 </div>
-                <div class="-mt-2 w-10 h-10 rounded-full bg-white mx-auto flex items-center justify-center">
+                <div class="-mt-2 w-10 h-10 rounded-full bg-[#FFC72C] mx-auto flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="text-[#DA291C] w-7 h-7">
                       <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
                       <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
                     </svg>
                 </div>
-                <p class="text-xs text-[#DA291C]">Home</p>
+                <p class="text-xs text-[#FFC72C]">Home</p>
             </div>
 
             <!-- Survey footer link: -ml-10 to make it horizontally centered -->
