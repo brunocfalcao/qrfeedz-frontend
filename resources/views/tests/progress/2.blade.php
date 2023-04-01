@@ -51,7 +51,7 @@
                 <div class="flex flex-col gap-12">
                     <button class="w-full h-[5rem] bg-[#FFBC0d] rounded-r-[2rem] rounded-tl-[2rem] flex justify-between items-center">
                         <div class="px-3">
-                            <div class="h-14 w-14 rounded-tl-full rounded-r-full bg-white text-[#FFBC0d] flex items-center justify-center">
+                            <div class="h-14 w-14 rounded-tl-full rounded-r-full bg-white text-[#DA291C] flex items-center justify-center">
                                 <svg class="w-7 h-7" viewBox="0 0 15 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_83_844)">
                                         <path d="M7.73484 0C8.02838 0.127202 8.34639 0.220157 8.61547 0.386497C8.93347 0.577299 9.12916 0.895303 9.26615 1.25245C9.69179 1.25245 10.1125 1.25245 10.5382 1.25245C11.0029 1.25245 11.2476 1.49706 11.2476 1.96184C11.2476 2.73483 11.2476 3.50783 11.2476 4.28571C11.2476 4.75538 11.0029 5 10.5431 5C8.51272 5 6.48239 5 4.45206 5C3.99218 5 3.74756 4.75049 3.74756 4.28571C3.74756 3.51272 3.74756 2.73973 3.74756 1.96184C3.74756 1.49706 3.99218 1.25245 4.45695 1.25245C4.8777 1.25245 5.30333 1.25245 5.72897 1.25245C5.94912 0.709393 6.31116 0.327789 6.85421 0.122309C6.98631 0.0733855 7.12818 0.0440313 7.26517 0.00489237C7.42173 0 7.57828 0 7.73484 0Z" fill="currentColor"/>
