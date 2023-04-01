@@ -65,7 +65,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="font-bold text-xl text-white w-full text-left">Give feedback</div>
+                        <div class="text-[#FFBC0d] font-bold text-xl text-white w-full text-left">Give feedback</div>
                         <div class="border-l-4 border-white h-10 text-3xl flex items-center justify-center px-4 text-white font-bold">
                             <div class="w-6 h-6">
                                 <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +93,7 @@
                         </div>
                         <div class="font-bold text-xl text-white w-full text-left">Make a complain</div>
                         <div class="border-l-4 border-white h-10 text-3xl flex items-center justify-center px-4 text-white font-bold">
-                            <div class="w-6 h-6">
+                            <div class="w-6 h-6 text-[#FFBC0d]">
                                 <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.93333 17.6C6.0301 17.697 6.14504 17.7739 6.2716 17.8265C6.39815 17.879 6.53382 17.906 6.67083 17.906C6.80785 17.906 6.94352 17.879 7.07007 17.8265C7.19662 17.7739 7.31157 17.697 7.40833 17.6L14.4167 10.5916C14.4939 10.5145 14.5552 10.423 14.597 10.3222C14.6388 10.2214 14.6604 10.1133 14.6604 10.0041C14.6604 9.895 14.6388 9.78693 14.597 9.68612C14.5552 9.58531 14.4939 9.49374 14.4167 9.41664L7.40833 2.40831C7 1.99998 6.34167 1.99998 5.93333 2.40831C5.525 2.81664 5.525 3.47498 5.93333 3.88331L12.05 9.99998L5.925 16.125C5.525 16.5333 5.525 17.1916 5.93333 17.6Z" fill="white"/>
                                 </svg>
