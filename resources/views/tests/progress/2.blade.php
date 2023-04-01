@@ -49,7 +49,7 @@
 
             <div class="w-[90%]">
 
-                <p class="text-xl font-bold px-3 pb-8">Let's start:</p>
+                <p class="text-xl font-bold px-3 pb-8">Choose an option</p>
 
                 <div class="flex flex-col gap-12">
 
@@ -69,7 +69,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="font-bold text-xl text-white w-full text-left">I want to give feedback</div>
+                        <div class="font-bold text-xl text-white w-full text-left">Give feedback</div>
                         <div class="border-l-4 border-white h-10 text-3xl flex items-center justify-center px-4 text-white font-bold">
                             <div class="w-6 h-6">
                                 <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -95,7 +95,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="font-bold text-xl text-white w-full text-left">I want to make a complain</div>
+                        <div class="font-bold text-xl text-white w-full text-left">Make a complain</div>
                         <div class="border-l-4 border-white h-10 text-3xl flex items-center justify-center px-4 text-white font-bold">
                             <div class="w-6 h-6">
                                 <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -121,7 +121,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="font-bold text-xl text-white w-full text-left">I want to thank you</div>
+                        <div class="font-bold text-xl text-white w-full text-left">Thank us</div>
                         <div class="border-l-4 border-white h-10 text-3xl flex items-center justify-center px-4 text-white font-bold">
                             <div class="w-6 h-6">
                                 <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
