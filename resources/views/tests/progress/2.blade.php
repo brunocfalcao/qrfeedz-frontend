@@ -49,7 +49,7 @@
 
             <div class="w-5/6">
 
-                <p class="text-xl font-bold py-12 px-3">Thank for your interest in providing us feedback!</p>
+                <p class="text-xl font-bold py-12 px-3">Let's start:</p>
 
                 <div class="flex flex-col gap-12">
 
