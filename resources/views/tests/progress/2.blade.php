@@ -23,6 +23,8 @@
 </head>
 <body class="flex flex-col bg-white mx-3 my-3 overflow-y-hidden">
 
+    <x-qrfeedz::support.responsive-brackets></x-qrfeedz::support.responsive-brackets>
+
     <!-- header section -->
     <header class="bg-[#DA291C] flex-none w-full rounded-t-[2rem] h-40">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
