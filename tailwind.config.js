@@ -14,12 +14,11 @@ module.exports = {
     theme: {
         extend: {
             screens: {
-                'h-xs': {'raw': '(max-height: 568px)'},
-                'h-sm': {'raw': '(min-height: 569px) and (max-height: 767px)'},
-                'h-md': {'raw': '(min-height: 768px) and (max-height: 1023px)'},
-                'h-lg': {'raw': '(min-height: 1024px)'},
+                'small': {'raw': '(max-height: 896px)'},
+                'medium': {'raw': '(max-height: 1030px)'},
+                'large': {'raw': '(max-height: 2796px)'},
             },
-        }
+        },
     },
 
     plugins: [

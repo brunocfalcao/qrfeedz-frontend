@@ -1,26 +1,29 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import path from 'path';
+import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     plugins: [
         laravel({
             input: [
-                path.resolve(__dirname, 'resources/js/app.js'),
-                path.resolve(__dirname, 'resources/css/app.css'),
+                'resources/js/app.js',
+                'resources/js/components/*.vue',
+                'resources/**/*'
             ],
-            refresh: [
-                path.resolve(__dirname, 'resources/**'),
-            ],
+            refresh: ['resources/**']
+        }),
+        vue({
+            template: {
+                transformAssetUrls: {
+                    base: null,
+                    includeAbsolute: false,
+                },
+            },
         }),
     ],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'resources/js'),
+            vue: 'vue/dist/vue.esm-bundler.js',
         },
-    },
-    build: {
-        outDir: path.resolve(__dirname, 'dist'),
-        manifest: true,
     },
 });

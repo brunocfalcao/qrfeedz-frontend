@@ -22,8 +22,13 @@
     </style>
 </head>
 <body class="flex flex-col bg-white mx-3 my-3 overflow-y-hidden">
+
+    <div id="app" class="absolute text-sm">
+        <resolution-display screen="small"></resolution-display>
+    </div>
+
     <!-- header section -->
-    <header class="bg-[#DA291C] flex-none w-full rounded-t-[2rem] h-20 h-lg:h-40">
+    <header class="bg-[#DA291C] flex-none w-full rounded-t-[2rem] h-40 small:h-20">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
 
             <!-- header content section -->
@@ -163,109 +168,9 @@
             </div>
         </div>
     </footer>
+    @vite('resources/js/app.js')
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
-        // Wait for the DOM to be ready before executing the rest of the code
-        $(document).ready(function() {
-            // Initialize the body height and set up an event listener for the resize event
-            setBodyHeight();
-            $(window).on('resize', setBodyHeight);
-
-            // Function to set the height of the body element
-            function setBodyHeight() {
-                // Get the visible height of the viewport
-                const visibleHeight = window.innerHeight;
-
-                // Get the safe area insets of the device
-                const safeAreaInsets = getSafeAreaInsets();
-
-                // Set the height of the body element to the sum of the visible height and the bottom safe area inset
-                $('body').height(visibleHeight + safeAreaInsets.bottom);
-            }
-
-            // Function to get the safe area insets of the device
-            function getSafeAreaInsets() {
-                // Get the values of the --safe-area-inset-top and --safe-area-inset-bottom CSS variables on the root html element
-                return {
-                    top: parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--safe-area-inset-top')) || 0,
-                    bottom: parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--safe-area-inset-bottom')) || 0
-                };
-            }
-
-            // Set safe area insets for mobile devices
-            // Check if the device is an iOS device
-            const isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
-
-            // Check if the app is running in standalone mode on an iOS device
-            const isStandalone = 'standalone' in window.navigator && window.navigator.standalone;
-
-            // Get the value of the env(safe-area-inset-bottom) CSS value
-            const safeAreaInsetBottom = 'env(safe-area-inset-bottom)';
-
-            // If the device is an iOS device running in standalone mode, or if it is not an iOS device, set the --safe-area-inset-bottom CSS variable on the root html element to the value of env(safe-area-inset-bottom)
-            if (isIOS && isStandalone || !isIOS) {
-                document.documentElement.style.setProperty('--safe-area-inset-bottom', safeAreaInsetBottom);
-            }
-        });
-
-        (function($) {
-          $.fn.showResolution = function() {
-            var $this = $(this),
-                $window = $(window),
-                $document = $(document),
-                windowHeight = $window.height(),
-                documentHeight = $document.height(),
-                footerHeight = $('footer').outerHeight() || 0,
-                navbarHeight = $('nav').outerHeight() || 0,
-                placeholderOffset = $this.offset(),
-                placeholderHeight = $this.outerHeight(),
-                placeholderWidth = $this.outerWidth(),
-                viewportHeight = windowHeight - (footerHeight + navbarHeight),
-                viewportWidth = $window.width(),
-                mediaQueryType = "";
-
-            function updateSize() {
-              windowHeight = $window.height();
-              documentHeight = $document.height();
-              viewportHeight = windowHeight - (footerHeight + navbarHeight);
-              viewportWidth = $window.width();
-              placeholderOffset = $this.offset();
-              placeholderHeight = $this.outerHeight();
-              placeholderWidth = $this.outerWidth();
-
-              if (viewportWidth >= 640) {
-                mediaQueryType = "SM";
-              }
-              if (viewportWidth >= 768) {
-                mediaQueryType = "MD";
-              }
-              if (viewportWidth >= 1024) {
-                mediaQueryType = "LG";
-              }
-              if (viewportWidth >= 1280) {
-                mediaQueryType = "XL";
-              }
-              if (viewportWidth >= 1536) {
-                mediaQueryType = "2XL";
-              }
-
-              if (placeholderOffset.top >= windowHeight) {
-                $this.text("0 x 0" + mediaQueryType);
-              } else if (placeholderOffset.top + placeholderHeight > windowHeight) {
-                var height = windowHeight - placeholderOffset.top;
-                var width = (height / placeholderHeight) * placeholderWidth;
-                $this.text(Math.round(width) + " x " + Math.round(height) + mediaQueryType);
-              } else {
-                $this.text(placeholderWidth + " x " + placeholderHeight + mediaQueryType);
-              }
-            }
-
-            $window.on("resize", updateSize);
-
-            updateSize();
-          };
-        })(jQuery);
 
     </script>
 </body>
