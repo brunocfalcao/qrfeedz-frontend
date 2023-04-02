@@ -22,16 +22,13 @@
     </style>
 </head>
 <body class="flex flex-col bg-white mx-3 my-3 overflow-y-hidden">
-
-    <x-qrfeedz::support.responsive-brackets></x-qrfeedz::support.responsive-brackets>
-
     <!-- header section -->
-    <header class="bg-[#DA291C] flex-none w-full rounded-t-[2rem] h-40">
+    <header class="bg-[#DA291C] flex-none w-full rounded-t-[2rem] h-20 h-lg:h-40">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
 
             <!-- header content section -->
             <div class="-mt-[2.5rem] text-center">
-                <div class="w-24 mx-auto text-[#FFC72C]">
+                <div class="w-12 h-lg:w-24 mx-auto text-[#FFC72C]">
                     <!-- logo -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40.605 -59.125 351.91 354.75"><path d="M194.5 16.8c23.3 0 42.2 98.3 42.2 219.7h34C270.7 105.8 236.4 0 194.4 0c-24 0-45.2 31.7-59.2 81.5C121.2 31.7 100 0 76.2 0 34.2 0 0 105.7 0 236.4h34C34 115 52.7 16.8 76 16.8s42.2 90.8 42.2 202.8H152c0-112 19-202.8 42.3-202.8" fill="currentColor"/></svg>
                     <!-- /logo -->
@@ -211,6 +208,65 @@
                 document.documentElement.style.setProperty('--safe-area-inset-bottom', safeAreaInsetBottom);
             }
         });
+
+        (function($) {
+          $.fn.showResolution = function() {
+            var $this = $(this),
+                $window = $(window),
+                $document = $(document),
+                windowHeight = $window.height(),
+                documentHeight = $document.height(),
+                footerHeight = $('footer').outerHeight() || 0,
+                navbarHeight = $('nav').outerHeight() || 0,
+                placeholderOffset = $this.offset(),
+                placeholderHeight = $this.outerHeight(),
+                placeholderWidth = $this.outerWidth(),
+                viewportHeight = windowHeight - (footerHeight + navbarHeight),
+                viewportWidth = $window.width(),
+                mediaQueryType = "";
+
+            function updateSize() {
+              windowHeight = $window.height();
+              documentHeight = $document.height();
+              viewportHeight = windowHeight - (footerHeight + navbarHeight);
+              viewportWidth = $window.width();
+              placeholderOffset = $this.offset();
+              placeholderHeight = $this.outerHeight();
+              placeholderWidth = $this.outerWidth();
+
+              if (viewportWidth >= 640) {
+                mediaQueryType = "SM";
+              }
+              if (viewportWidth >= 768) {
+                mediaQueryType = "MD";
+              }
+              if (viewportWidth >= 1024) {
+                mediaQueryType = "LG";
+              }
+              if (viewportWidth >= 1280) {
+                mediaQueryType = "XL";
+              }
+              if (viewportWidth >= 1536) {
+                mediaQueryType = "2XL";
+              }
+
+              if (placeholderOffset.top >= windowHeight) {
+                $this.text("0 x 0" + mediaQueryType);
+              } else if (placeholderOffset.top + placeholderHeight > windowHeight) {
+                var height = windowHeight - placeholderOffset.top;
+                var width = (height / placeholderHeight) * placeholderWidth;
+                $this.text(Math.round(width) + " x " + Math.round(height) + mediaQueryType);
+              } else {
+                $this.text(placeholderWidth + " x " + placeholderHeight + mediaQueryType);
+              }
+            }
+
+            $window.on("resize", updateSize);
+
+            updateSize();
+          };
+        })(jQuery);
+
     </script>
 </body>
 </html>
