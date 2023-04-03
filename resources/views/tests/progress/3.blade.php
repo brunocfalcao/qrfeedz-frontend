@@ -28,7 +28,7 @@
     </div>
 
     <!-- header section -->
-    <header class="flex-none w-full rounded-t-[2rem] h-sm:bg-indigo-100 h-md:bg-indigo-300 h-40">
+    <header class="bg-[#DA291C] flex-none w-full rounded-t-[2rem] h-sm:h-20 h-md:h-40">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
 
             <!-- header content section -->
