@@ -1,115 +1,51 @@
 <template>
-  <div class="relative h-screen w-screen">
-    <div class="flex h-screen w-screen absolute top-0 left-0">
-      <div
-        v-if="!screen || screen === 'small'"
-        class="bg-red-500 opacity-20 w-full h-[640px] absolute top-0 left-0"
-        :style="`@media ${screens.small.raw} {display: block; z-index: ${zIndices.small}}`"
-      ></div>
-      <div
-        v-if="!screen || screen === 'medium'"
-        class="bg-green-500 opacity-20 w-full h-[768px] absolute top-0 left-0"
-        :style="`@media ${screens.medium.raw} {display: block; z-index: ${zIndices.medium}}`"
-      ></div>
-      <div
-        v-if="!screen || screen === 'large'"
-        class="bg-blue-500 opacity-20 w-full h-[1024px] absolute top-0 left-0"
-        :style="`@media ${screens.large.raw} {display: block; z-index: ${zIndices.large}}`"
-      ></div>
-    </div>
-    <div class="absolute top-0 left-0 p-2 font-bold text-sm opacity-20">
-      {{ screenResolution }}
-    </div>
-    <div class="absolute top-8 left-0 p-2 font-bold text-sm opacity-20">
-      {{ currentMediaType }}
+  <div class="container">
+    <div class="visible-size">{{ visibleWidth }} x {{ visibleHeight }} CSS pixels</div>
+    <div class="content">
+      <!-- your content here -->
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ScreenRectangles",
-  props: {
-    screen: {
-      type: String,
-      default: "",
-    },
-  },
   data() {
     return {
-      screens: {
-        // Small devices (iPhone 7, 8, SE 2nd gen, and similar Android devices)
-        small: {
-          raw: "(max-height: 640px)",
-        },
-
-        // Medium devices (iPhone X, XR, XS, XS Max, 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 12 Mini, 13, 13 Pro, 13 Pro Max, 13 Mini, and similar Android devices)
-        medium: {
-          raw: "(max-height: 768px)",
-        },
-
-        // Large devices (hypothetical iPhone 14 Pro Max, OnePlus devices, and similar large Android devices)
-        large: {
-          raw: "(max-height: 1024px)",
-        },
-      },
-      zIndices: {
-        small: 3,
-        medium: 2,
-        large: 1,
-      },
       visibleWidth: 0,
-      visibleHeight: 0,
-    };
+      visibleHeight: 0
+    }
   },
   mounted() {
-    window.addEventListener("resize", this.updateScreenData);
-    this.updateScreenData();
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.updateScreenData);
-  },
-  methods: {
-    updateScreenData() {
-      this.visibleHeight = Math.max(
-        document.documentElement.clientHeight,
-        window.innerHeight || 0
-      );
-      this.visibleWidth = Math.max(
-        document.documentElement.clientWidth,
-        window.innerWidth || 0
-      );
-    },
-  },
-  computed: {
-    screenResolution() {
-      return `${this.visibleWidth} x ${this.visibleHeight}`;
-    },
-    currentMediaType() {
-      let mediaType = "";
-      if (this.visibleHeight <= 640) {
-        mediaType = "small";
-      } else if (this.visibleHeight <= 768) {
-        mediaType = "medium";
-      } else {
-        mediaType = "large";
-      }
-      return mediaType;
-    },
-  },
-};
+    // calculate the visible size and update the data properties
+    this.visibleWidth = document.documentElement.clientWidth;
+    this.visibleHeight = document.documentElement.clientHeight;
+
+    // update the visible size whenever the window is resized
+    window.addEventListener('resize', () => {
+      this.visibleWidth = document.documentElement.clientWidth;
+      this.visibleHeight = document.documentElement.clientHeight;
+    });
+  }
+}
 </script>
 
 <style scoped>
-.bg-red-500 {
-  background-color: #ef4444;
+.container {
+  position: relative;
 }
 
-.bg-green-500 {
-  background-color: #10b981;
+.visible-size {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
-.bg-blue-500 {
-  background-color: #3b82f6;
+.content {
+  /* add your styles here */
 }
 </style>

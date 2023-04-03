@@ -86,4 +86,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isIOS && isStandalone || !isIOS) {
         document.documentElement.style.setProperty('--safe-area-inset-bottom', safeAreaInsetBottom);
     }
+
+    lockPortraitMode();
 });
+
+function lockPortraitMode() {
+  // Check if screen orientation API is supported
+  if (screen.orientation) {
+    // Lock the screen to portrait mode
+    screen.orientation.lock("portrait").then(function() {
+      console.log("Screen orientation locked to portrait");
+    }).catch(function(error) {
+      console.error("Failed to lock screen orientation: " + error);
+    });
+  }
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     @vite('resources/css/app.css')
@@ -24,11 +24,11 @@
 <body class="flex flex-col bg-white mx-3 my-3 overflow-y-hidden">
 
     <div id="app" class="absolute text-sm">
-        <resolution-display screen="small"></resolution-display>
+        <resolution-display></resolution-display>
     </div>
 
     <!-- header section -->
-    <header class="bg-indigo-500 small:bg-purple-500 medium:bg-green-500 large:bg-brown-500 flex-none w-full rounded-t-[2rem] h-40">
+    <header class="flex-none w-full rounded-t-[2rem] h-sm:bg-indigo-100 h-md:bg-indigo-300 h-40">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
 
             <!-- header content section -->
@@ -169,9 +169,5 @@
         </div>
     </footer>
     @vite('resources/js/app.js')
-
-    <script>
-
-    </script>
 </body>
 </html>
