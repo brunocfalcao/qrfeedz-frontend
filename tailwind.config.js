@@ -14,10 +14,16 @@ module.exports = {
     theme: {
         extend: {
             screens: {
-                'small': {'raw': '(max-height: 896px)'},
-                'medium': {'raw': '(max-height: 1030px)'},
-                'large': {'raw': '(max-height: 2796px)'},
+                'small': {'raw': '(min-height: 640px)'},
+                'medium': {'raw': '(min-height: 768px)'},
+                'large': {'raw': '(min-height: 1024px)'},
             },
+        },
+    },
+    variants: {
+        extend: {
+            height: ['responsive', 'small', 'medium', 'large'],
+            minHeight: ['responsive', 'small', 'medium', 'large'],
         },
     },
 

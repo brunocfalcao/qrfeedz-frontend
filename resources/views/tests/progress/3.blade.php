@@ -23,12 +23,12 @@
 </head>
 <body class="flex flex-col bg-white mx-3 my-3 overflow-y-hidden">
 
-    <div id="app" class="hidden absolute text-sm">
+    <div id="app" class="absolute text-sm">
         <resolution-display screen="small"></resolution-display>
     </div>
 
     <!-- header section -->
-    <header class="bg-[#DA291C] flex-none w-full rounded-t-[2rem] h-40">
+    <header class="bg-indigo-500 small:bg-purple-500 medium:bg-green-500 large:bg-brown-500 flex-none w-full rounded-t-[2rem] h-40">
         <div class="text-center text-white font-bold py-2 flex items-center justify-center h-full">
 
             <!-- header content section -->

@@ -3,25 +3,25 @@
     <div class="flex h-screen w-screen absolute top-0 left-0">
       <div
         v-if="!screen || screen === 'small'"
-        class="bg-red-500 opacity-20 w-full h-[896px] absolute top-0 left-0"
+        class="bg-red-500 opacity-20 w-full h-[640px] absolute top-0 left-0"
         :style="`@media ${screens.small.raw} {display: block; z-index: ${zIndices.small}}`"
       ></div>
       <div
         v-if="!screen || screen === 'medium'"
-        class="bg-green-500 opacity-20 w-full h-[1030px] absolute top-0 left-0"
+        class="bg-green-500 opacity-20 w-full h-[768px] absolute top-0 left-0"
         :style="`@media ${screens.medium.raw} {display: block; z-index: ${zIndices.medium}}`"
       ></div>
       <div
         v-if="!screen || screen === 'large'"
-        class="bg-blue-500 opacity-20 w-full h-[2796px] absolute top-0 left-0"
+        class="bg-blue-500 opacity-20 w-full h-[1024px] absolute top-0 left-0"
         :style="`@media ${screens.large.raw} {display: block; z-index: ${zIndices.large}}`"
       ></div>
     </div>
-    <div class="absolute top-0 left-0 bg-white p-2 font-bold text-sm">
-      Screen resolution: {{ screenResolution }}
+    <div class="absolute top-0 left-0 p-2 font-bold text-sm opacity-20">
+      {{ screenResolution }}
     </div>
-    <div class="absolute top-8 left-0 bg-white p-2 font-bold text-sm">
-      Media type: {{ currentMediaType }}
+    <div class="absolute top-8 left-0 p-2 font-bold text-sm opacity-20">
+      {{ currentMediaType }}
     </div>
   </div>
 </template>
@@ -40,17 +40,17 @@ export default {
       screens: {
         // Small devices (iPhone 7, 8, SE 2nd gen, and similar Android devices)
         small: {
-          raw: "(max-height: 896px)",
+          raw: "(max-height: 640px)",
         },
 
         // Medium devices (iPhone X, XR, XS, XS Max, 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 12 Mini, 13, 13 Pro, 13 Pro Max, 13 Mini, and similar Android devices)
         medium: {
-          raw: "(max-height: 1030px)",
+          raw: "(max-height: 768px)",
         },
 
         // Large devices (hypothetical iPhone 14 Pro Max, OnePlus devices, and similar large Android devices)
         large: {
-          raw: "(max-height: 2796px)",
+          raw: "(max-height: 1024px)",
         },
       },
       zIndices: {
@@ -87,9 +87,9 @@ export default {
     },
     currentMediaType() {
       let mediaType = "";
-      if (this.visibleHeight <= 896) {
+      if (this.visibleHeight <= 640) {
         mediaType = "small";
-      } else if (this.visibleHeight <= 1030) {
+      } else if (this.visibleHeight <= 768) {
         mediaType = "medium";
       } else {
         mediaType = "large";
