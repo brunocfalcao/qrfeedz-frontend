@@ -48,6 +48,7 @@ class FrontendServiceProvider extends ServiceProvider
     protected function loadRoutes(): void
     {
         $routesPath = __DIR__.'/../routes/'.app()->environment().'.php';
+        $defaultPath = __DIR__.'/../routes/frontend.php';
 
         Route::middleware([
             'web',
@@ -55,6 +56,18 @@ class FrontendServiceProvider extends ServiceProvider
         ])
          ->group(function () use ($routesPath) {
              include $routesPath;
+         });
+
+        /**
+         * Include the default frontend routes. They are included no matter
+         * what environment we are currently on.
+         */
+        Route::middleware([
+            'web',
+            VisitTracing::class,
+        ])
+         ->group(function () use ($defaultPath) {
+             include $defaultPath;
          });
     }
 

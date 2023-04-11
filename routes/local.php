@@ -9,16 +9,10 @@ use QRFeedz\Frontend\Controllers\QuestionnaireController;
 
 /*
 |--------------------------------------------------------------------------
-| QRFeedz Frontend Routes
+| QRFeedz Local environment routes.
 |--------------------------------------------------------------------------
 |
 */
-Route::get(
-    '/qrcode/{questionnaire:uuid}',
-    [QuestionnaireController::class, 'renderSurvey']
-)->name('survey.render')
- ->middleware('check-questionnaire');
-
 Route::get('first', [QuestionnaireController::class, 'first']);
 
 //Route::view('mobile', 'qrfeedz::mobile');

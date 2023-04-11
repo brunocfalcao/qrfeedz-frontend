@@ -9,7 +9,9 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/css/app.css'
             ],
-            refresh: ['resources/**']
+            refresh: [
+                'resources/**'
+            ]
         }),
         vue({
             template: {
