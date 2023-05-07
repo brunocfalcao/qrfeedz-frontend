@@ -13,4 +13,4 @@ Route::get(
     '/qrcode/{questionnaire:uuid}',
     [QuestionnaireController::class, 'render']
 )->name('survey.render')
- ->middleware('check-questionnaire');
+    ->middleware('check-questionnaire');

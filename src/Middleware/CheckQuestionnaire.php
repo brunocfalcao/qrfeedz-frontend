@@ -11,8 +11,9 @@ class CheckQuestionnaire
     {
         $questionnaire = $request->route('questionnaire');
 
-        return ! $questionnaire->isValid() ?
-            $next($request) :
-            response()->view('qrfeedz::exceptions.questionnaire-invalid');
+        return
+            $questionnaire->isValid() ?
+                $next($request) :
+                response()->view('qrfeedz::exceptions.questionnaire-invalid');
     }
 }

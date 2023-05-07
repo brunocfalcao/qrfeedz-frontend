@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
-use QRFeedz\Frontend\Controllers\QuestionnaireController;
+use QRFeedz\Cube\Models\Questionnaire;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +13,12 @@ use QRFeedz\Frontend\Controllers\QuestionnaireController;
 |--------------------------------------------------------------------------
 |
 */
-Route::get('first', [QuestionnaireController::class, 'first']);
+
+Route::get('/first', function () {
+    $questionnaire = Questionnaire::first();
+
+    return redirect("/qrcode/{$questionnaire->uuid}")->withInput();
+});
 
 //Route::view('mobile', 'qrfeedz::mobile');
 

@@ -37,7 +37,7 @@ class FrontendServiceProvider extends ServiceProvider
     protected function registerMiddleware()
     {
         $this->app['router']
-             ->aliasMiddleware('check-questionnaire', CheckQuestionnaire::class);
+            ->aliasMiddleware('check-questionnaire', CheckQuestionnaire::class);
     }
 
     protected function loadViews(): void
@@ -54,9 +54,9 @@ class FrontendServiceProvider extends ServiceProvider
             'web',
             VisitTracing::class,
         ])
-         ->group(function () use ($routesPath) {
-             include $routesPath;
-         });
+            ->group(function () use ($routesPath) {
+                include $routesPath;
+            });
 
         /**
          * Include the default frontend routes. They are included no matter
@@ -66,9 +66,9 @@ class FrontendServiceProvider extends ServiceProvider
             'web',
             VisitTracing::class,
         ])
-         ->group(function () use ($defaultPath) {
-             include $defaultPath;
-         });
+            ->group(function () use ($defaultPath) {
+                include $defaultPath;
+            });
     }
 
     protected function overrideResources(): void

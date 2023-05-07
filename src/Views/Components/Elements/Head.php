@@ -7,14 +7,9 @@ use Illuminate\View\Component;
 
 class Head extends Component
 {
-    public $questionnaire;
-
-    public $lang;
-
     public function __construct()
     {
-        $this->questionnaire = (new Cerebrus())->get('questionnaire');
-        $this->lang = (new Cerebrus())->get('lang');
+        //
     }
 
     public function render()
