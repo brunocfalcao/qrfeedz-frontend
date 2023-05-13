@@ -78,8 +78,8 @@
                 rendered inside this main view component template.
             --}}
 
-            <x-dynamic-component :component="'x-qrfeedz::' . $pageType->view_component_container_namespace">
-                <x-dynamic-component :component="'x-qrfeedz::' . $pageType->pivot->targetViewComponent()" />
+            <x-dynamic-component :component="'qrfeedz::' . $pageType->view_component_container_namespace">
+                <x-dynamic-component :component="'qrfeedz::' . $pageType->pivot->targetViewComponent()" />
             </x-dynamic-component>
 
         @endforeach
