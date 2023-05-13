@@ -1,6 +1,15 @@
 <x-qrfeedz::elements.html>
 
     <x-qrfeedz::elements.head title="Okay!">
+
+        @env('local')
+        <style>
+            .phpdebugbar {
+                opacity: 0.5;
+            }
+        </style>
+        @endenv
+
     </x-qrfeedz::elements.head>
 
     <x-qrfeedz::elements.body>
@@ -44,7 +53,36 @@
             the variable will be called complain[].
         --}}
 
+        {{--
+            First step is render all the pages, hidden. The pages are rendered
+            in the order of the questionnaire page type index (N-N table).
 
+            Each page will be hidden, then later we will activate the pages
+            and compute the sliders between the pages and page groups.
+
+            Each page placeholder will render the respective view component
+            of the questionnaire page type instance or its view component
+            override.
+
+            We also need to understand that some page instances they are
+            full screen, while others will be rendered inside the normal
+            header-content-footer structure. This is given by the page type
+            instance mode (table page_types.fullscreen=true/false).
+        --}}
+
+        @foreach($questionnaire->pageTypes as $pageType)
+
+            {{--
+                The page will be rendered in full screen. There will be no
+                header and footer, and the view component will just be
+                rendered inside this main view component template.
+            --}}
+
+            <x-dynamic-component :component="'x-qrfeedz::' . $pageType->view_component_container_namespace">
+                <x-dynamic-component :component="'x-qrfeedz::' . $pageType->pivot->targetViewComponent()" />
+            </x-dynamic-component>
+
+        @endforeach
 
     </x-qrfeedz::elements.body>
 

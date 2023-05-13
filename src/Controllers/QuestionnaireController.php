@@ -39,17 +39,4 @@ class QuestionnaireController extends Controller
         return view('qrfeedz::questionnaire')
                 ->with('questionnaire', $questionnaire);
     }
-
-    /**
-     * Just a quick test, that finds the first questionnaire and renders it.
-     *
-     * @param  Questionnaire  $questionnaire
-     * @return mixed
-     */
-    public function first(Request $request)
-    {
-        $questionnaire = Questionnaire::all()->first();
-
-        return $this->render($request, $questionnaire);
-    }
 }

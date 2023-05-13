@@ -5,35 +5,6 @@
  */
 
 import './bootstrap';
-import { createApp } from 'vue';
-
-/**
- * Next, we will create a fresh Vue application instance. You may then begin
- * registering components with the application instance so they are ready
- * to use in your application's views. An example is included for you.
- */
-
-const app = createApp({});
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
-   app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
-});
-
-/**
- * Finally, we will attach the application instance to a HTML element with
- * an "id" attribute of "app". This element is included with the "auth"
- * scaffolding. Otherwise, you will need to add an element yourself.
- */
-
-app.mount('#app');
 
 import.meta.glob([
   '../images/**'
@@ -71,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Set safe area insets for mobile devices
     // Check if the device is an iOS device
-    const isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     // Check if the app is running in standalone mode on an iOS device
     const isStandalone = 'standalone' in window.navigator && window.navigator.standalone;
@@ -80,11 +51,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const safeAreaInsetBottom = 'env(safe-area-inset-bottom)';
 
     // If the device is an iOS device running in standalone mode, or if it is not an iOS device, set the --safe-area-inset-bottom CSS variable on the root html element to the value of env(safe-area-inset-bottom)
-    if (isIOS && isStandalone || !isIOS) {
+    if (isMobile && isStandalone || !isMobile) {
         document.documentElement.style.setProperty('--safe-area-inset-bottom', safeAreaInsetBottom);
     }
 
-    lockPortraitMode();
+    if (window.location.protocol === 'https:' && isMobile) {
+        lockPortraitMode();
+    }
+
 });
 
 function lockPortraitMode() {

@@ -47,7 +47,10 @@ class FrontendServiceProvider extends ServiceProvider
 
     protected function loadRoutes(): void
     {
+        // Load routes from the respective environment type.
         $routesPath = __DIR__.'/../routes/'.app()->environment().'.php';
+
+        // Load default frontend routes.
         $defaultPath = __DIR__.'/../routes/frontend.php';
 
         Route::middleware([
