@@ -5,7 +5,7 @@ namespace QRFeedz\Frontend\Views\Components\Elements;
 use Brunocfalcao\Cerebrus\Cerebrus;
 use Illuminate\View\Component;
 
-class Html extends Component
+class BlaBlaHtml extends Component
 {
     public $questionnaire;
 
