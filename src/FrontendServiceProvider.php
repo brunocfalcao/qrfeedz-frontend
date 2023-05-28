@@ -11,7 +11,7 @@ use QRFeedz\Frontend\Middleware\CheckQuestionnaire;
 
 class FrontendServiceProvider extends ServiceProvider
 {
-    public function boot(): void
+    public function boot()
     {
         $this->overrideResources();
         $this->loadViews();
@@ -20,7 +20,7 @@ class FrontendServiceProvider extends ServiceProvider
         $this->registerMiddleware();
     }
 
-    public function register(): void
+    public function register()
     {
         $this->app->bind('frontend-cerebrus', function ($app) {
             /**
@@ -40,12 +40,12 @@ class FrontendServiceProvider extends ServiceProvider
             ->aliasMiddleware('check-questionnaire', CheckQuestionnaire::class);
     }
 
-    protected function loadViews(): void
+    protected function loadViews()
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'qrfeedz');
     }
 
-    protected function loadRoutes(): void
+    protected function loadRoutes()
     {
         // Load routes from the respective environment type.
         $routesPath = __DIR__.'/../routes/'.app()->environment().'.php';
@@ -74,7 +74,7 @@ class FrontendServiceProvider extends ServiceProvider
             });
     }
 
-    protected function overrideResources(): void
+    protected function overrideResources()
     {
         $this->publishes([
             __DIR__.'/../resources/overrides/' => base_path('/'),
@@ -83,6 +83,16 @@ class FrontendServiceProvider extends ServiceProvider
 
     protected function registerBladeComponents()
     {
-        Blade::componentNamespace('QRFeedz\\Frontend\\Views\\Components', 'qrfeedz');
+        Blade::anonymousComponentPath(
+            __DIR__.'/../resources/views',
+            'qrfeedz'
+        );
+
+        /*
+        Blade::anonymousComponentNamespace(
+            __DIR__.'/../resources/views',
+            'qrfeedz'
+        );
+        */
     }
 }

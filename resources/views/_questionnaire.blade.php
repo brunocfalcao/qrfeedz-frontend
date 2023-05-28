@@ -1,6 +1,6 @@
 <x-qrfeedz::components.elements.html>
 
-    <x-qrfeedz::components.elements.head title="Okay!">
+    <x-qrfeedz::elements.head title="Okay!">
 
         @env('local')
         <style>
@@ -10,9 +10,9 @@
         </style>
         @endenv
 
-    </x-qrfeedz::components.elements.head>
+    </x-qrfeedz::elements.head>
 
-    <x-qrfeedz::components.elements.body>
+    <x-qrfeedz::elements.body>
 
         @env('local')
             <div id="app" class="absolute text-sm">
@@ -78,26 +78,12 @@
                 rendered inside this main view component template.
             --}}
 
-            <x-dynamic-component :component="'qrfeedz::' . $pageType->view_component_namespace">
-
-                {{--
-                    Inside the page view component, we will need to render whatever comes from the
-                    instance page view questions. One by one, questions index ordered.
-                --}}
-
-                @dd($pageType->pivot)
-
-                @foreach($pageType->questions as $question)
-
-                    @dd($question)
-
-                @endforeach
-
-
+            <x-dynamic-component :component="'qrfeedz::' . $pageType->view_component_container_namespace">
+                <x-dynamic-component :component="'qrfeedz::' . $pageType->pivot->targetViewComponent()" />
             </x-dynamic-component>
 
         @endforeach
 
-    </x-qrfeedz::components.elements.body>
+    </x-qrfeedz::elements.body>
 
-</x-qrfeedz::components.elements.html>
+</x-qrfeedz::elements.html>
