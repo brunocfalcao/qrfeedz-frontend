@@ -26,7 +26,8 @@
             ** Questionnaire rendering logic **
 
             Each questionnaire is composed of pages. Each page, is then
-            composed of questions, and each question can have widget(s).
+            composed of questions, and each question instance can have
+            widget(s).
 
             Each widget can also have logic. Can have a value, or can
             just be viewable. Can also have a conditional, meaning if
@@ -82,14 +83,14 @@
 
                 {{--
                     Inside the page view component, we will need to render whatever comes from the
-                    instance page view questions. One by one, questions index ordered.
+                    instance page view question_instances. One by one, questions index ordered.
                 --}}
 
                 @dd($pageType->pivot)
 
-                @foreach($pageType->questions as $question)
+                @foreach($pageType->questionInstances as $questionInstance)
 
-                    @dd($question)
+                    @dd($questionInstance)
 
                 @endforeach
 
