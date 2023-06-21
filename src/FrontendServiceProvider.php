@@ -78,7 +78,7 @@ class FrontendServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../resources/overrides/' => base_path('/'),
-        ]);
+        ], 'qrfeedz-frontend-overrides');
     }
 
     protected function registerBladeComponents()
