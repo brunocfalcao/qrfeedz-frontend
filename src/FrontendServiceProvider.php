@@ -6,10 +6,10 @@ use Brunocfalcao\Cerebrus\Cerebrus;
 use Brunocfalcao\Tracer\Middleware\VisitTracing;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\ServiceProvider;
+use QRFeedz\Foundation\Abstracts\QRFeedzServiceProvider;
 use QRFeedz\Frontend\Middleware\CheckQuestionnaire;
 
-class FrontendServiceProvider extends ServiceProvider
+class FrontendServiceProvider extends QRFeedzServiceProvider
 {
     public function boot()
     {
