@@ -19,6 +19,6 @@ class BlaBlaHtml extends Component
 
     public function render()
     {
-        return view('qrfeedz::components.elements.html');
+        return view('qrfeedz-frontend::components.elements.html');
     }
 }

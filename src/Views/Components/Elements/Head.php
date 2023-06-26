@@ -13,6 +13,6 @@ class Head extends Component
 
     public function render()
     {
-        return view('qrfeedz::components.elements.head');
+        return view('qrfeedz-frontend::components.elements.head');
     }
 }

@@ -15,7 +15,7 @@ Route::get('/first', function () {
 
     return $questionnaire ?
         redirect("/qrcode/{$questionnaire->uuid}")->withInput() :
-        view('qrfeedz::exceptions.questionnaire-invalid');
+        view('qrfeedz-frontend::exceptions.questionnaire-invalid');
 });
 
-Route::view('/template', 'qrfeedz::template');
+Route::view('/template', 'qrfeedz-frontend::template');

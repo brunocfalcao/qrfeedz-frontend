@@ -79,7 +79,7 @@
                 rendered inside this main view component template.
             --}}
 
-            <x-dynamic-component :component="'qrfeedz::' . $pageType->view_component_namespace">
+            <x-dynamic-component :component="'qrfeedz-frontend::' . $pageType->view_component_namespace">
 
                 {{--
                     Inside the page view component, we will need to render whatever comes from the

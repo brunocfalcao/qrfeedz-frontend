@@ -13,6 +13,6 @@ class Splash5Secs extends Component
 
     public function render()
     {
-        return view('qrfeedz::components.widgets.splash-5-secs');
+        return view('qrfeedz-frontend::components.widgets.splash-5-secs');
     }
 }

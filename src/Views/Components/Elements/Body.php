@@ -13,6 +13,6 @@ class Body extends Component
 
     public function render()
     {
-        return view('qrfeedz::components.elements.body');
+        return view('qrfeedz-frontend::components.elements.body');
     }
 }

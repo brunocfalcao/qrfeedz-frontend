@@ -28,7 +28,7 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
              * a "path" parameter, because this bind is just used as a
              * Cerebrus Facade to be used in the blade templates, as
              *
-             * $survey = Cerebrus::get('questionnaire');
+             * $survey = CerebrusFacade::get('questionnaire');
              */
             return new Cerebrus();
         });
@@ -37,12 +37,18 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
     protected function registerMiddleware()
     {
         $this->app['router']
-            ->aliasMiddleware('check-questionnaire', CheckQuestionnaire::class);
+             ->aliasMiddleware(
+                 'check-questionnaire',
+                 CheckQuestionnaire::class
+             );
     }
 
     protected function loadViews()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'qrfeedz');
+        $this->loadViewsFrom(
+            __DIR__.'/../resources/views',
+            'qrfeedz-frontend'
+        );
     }
 
     protected function loadRoutes()

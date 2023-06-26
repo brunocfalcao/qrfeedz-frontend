@@ -14,6 +14,6 @@ class CheckQuestionnaire
         return
             $questionnaire->isValid() ?
                 $next($request) :
-                response()->view('qrfeedz::exceptions.questionnaire-invalid');
+                response()->view('qrfeedz-frontend::exceptions.questionnaire-invalid');
     }
 }
