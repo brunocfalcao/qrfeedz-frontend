@@ -93,12 +93,5 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
             __DIR__.'/../resources/views',
             'qrfeedz'
         );
-
-        /*
-        Blade::anonymousComponentNamespace(
-            __DIR__.'/../resources/views',
-            'qrfeedz'
-        );
-        */
     }
 }
