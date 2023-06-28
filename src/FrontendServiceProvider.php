@@ -13,11 +13,11 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
 {
     public function boot()
     {
-        $this->overrideResources();
         $this->loadViews();
         $this->loadRoutes();
-        $this->registerBladeComponents();
+        $this->overrideResources();
         $this->registerMiddleware();
+        $this->registerAnonymousBladeComponents();
     }
 
     public function register()
@@ -87,7 +87,7 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
         ], 'qrfeedz-frontend-overrides');
     }
 
-    protected function registerBladeComponents()
+    protected function registerAnonymousBladeComponents()
     {
         Blade::anonymousComponentPath(
             __DIR__.'/../resources/views',
