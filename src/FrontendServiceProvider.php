@@ -16,7 +16,6 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
         $this->loadViews();
         $this->loadRoutes();
         $this->overrideResources();
-        $this->registerMiddleware();
         $this->registerAnonymousBladeComponents();
     }
 
@@ -26,21 +25,12 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
             /**
              * On this case we are using a specific Cerebrus object without
              * a "path" parameter, because this bind is just used as a
-             * Cerebrus Facade to be used in the blade templates, as
+             * Cerebrus Facade to be used in the blade templates, as:
              *
              * $survey = CerebrusFacade::get('questionnaire');
              */
             return new Cerebrus();
         });
-    }
-
-    protected function registerMiddleware()
-    {
-        $this->app['router']
-             ->aliasMiddleware(
-                 'check-questionnaire',
-                 CheckQuestionnaire::class
-             );
     }
 
     protected function loadViews()
@@ -62,6 +52,7 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
         Route::middleware([
             'web',
             VisitTracing::class,
+            CheckQuestionnaire::class
         ])
             ->group(function () use ($routesPath) {
                 include $routesPath;
