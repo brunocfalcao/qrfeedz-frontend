@@ -22,6 +22,7 @@
         "brunocfalcao/laravel-tracer": "dev-master",
         "brunocfalcao/laravel-logger": "dev-master",
         "brunocfalcao/laravel-helpers": "dev-master",
+        "brunocfalcao/qrfeedz-analytics": "dev-master",
         "brunocfalcao/qrfeedz-services": "dev-master",
         "brunocfalcao/qrfeedz-foundation": "dev-master"
     },
