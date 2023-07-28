@@ -14,3 +14,5 @@ Route::get(
     [QuestionnaireController::class, 'render']
 )->name('survey.render')
     ->middleware('check-questionnaire');
+
+Route::view('/', 'qrfeedz-frontend::public.welcome');
