@@ -52,7 +52,7 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
         Route::middleware([
             'web',
             VisitTracing::class,
-            CheckQuestionnaire::class
+            CheckQuestionnaire::class,
         ])
             ->group(function () use ($routesPath) {
                 include $routesPath;
