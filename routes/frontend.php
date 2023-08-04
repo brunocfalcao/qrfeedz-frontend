@@ -17,3 +17,9 @@ Route::get(
 
 Route::view('/', 'qrfeedz-frontend::public.welcome')
      ->name('welcome');
+
+Route::redirect(
+    '/contact-us',
+    'mailto:contact@qrfeedz.ch'
+)
+     ->name('qrfeedz.contact-us');
