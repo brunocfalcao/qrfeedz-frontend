@@ -19,9 +19,9 @@
         "php": "^8.1",
         "illuminate/contracts": "^10.0",
         "brunocfalcao/cerebrus": "dev-master",
-        "brunocfalcao/laravel-logger": "dev-master",
         "brunocfalcao/laravel-helpers": "dev-master",
         "brunocfalcao/laravel-tracer": "dev-master",
+        "brunocfalcao/qrfeedz-routes": "dev-master",
         "brunocfalcao/qrfeedz-services": "dev-master",
         "brunocfalcao/qrfeedz-foundation": "dev-master"
     },
