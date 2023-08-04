@@ -14,7 +14,6 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
     public function boot()
     {
         $this->loadViews();
-        $this->loadRoutes();
         $this->overrideResources();
         $this->registerAnonymousBladeComponents();
     }
