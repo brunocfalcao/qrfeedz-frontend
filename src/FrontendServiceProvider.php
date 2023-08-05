@@ -40,36 +40,6 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
         );
     }
 
-    protected function loadRoutes()
-    {
-        // Load routes from the respective environment type.
-        $routesPath = __DIR__.'/../routes/'.app()->environment().'.php';
-
-        // Load default frontend routes.
-        $defaultPath = __DIR__.'/../routes/frontend.php';
-
-        Route::middleware([
-            'web',
-            VisitTracing::class,
-            CheckQuestionnaire::class,
-        ])
-            ->group(function () use ($routesPath) {
-                include $routesPath;
-            });
-
-        /**
-         * Include the default frontend routes. They are included no matter
-         * what environment we are currently on.
-         */
-        Route::middleware([
-            'web',
-            VisitTracing::class,
-        ])
-            ->group(function () use ($defaultPath) {
-                include $defaultPath;
-            });
-    }
-
     protected function overrideResources()
     {
         $this->publishes([
