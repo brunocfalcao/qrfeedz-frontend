@@ -37,6 +37,6 @@ class QuestionnaireController extends Controller
             (new Cerebrus())->unset('lang');
 
         return view('qrfeedz-frontend::questionnaire')
-            ->with('questionnaire', $questionnaire);
+                ->with('questionnaire', $questionnaire);
     }
 }

@@ -4,7 +4,11 @@ namespace QRFeedz\Frontend;
 
 use Brunocfalcao\Cerebrus\Cerebrus;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Route;
 use QRFeedz\Foundation\Abstracts\QRFeedzServiceProvider;
+use QRFeedz\Frontend\Middleware\PersistLocale;
+use QRFeedz\Frontend\Middleware\ValidateQRCode;
+use QRFeedz\Frontend\Middleware\ValidateSessionUuid;
 
 class FrontendServiceProvider extends QRFeedzServiceProvider
 {
@@ -13,6 +17,7 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
         $this->loadViews();
         $this->overrideResources();
         $this->registerAnonymousBladeComponents();
+        $this->registerMiddlewareAliases();
     }
 
     public function register()
@@ -27,6 +32,24 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
              */
             return new Cerebrus();
         });
+    }
+
+    protected function registerMiddlewareAliases()
+    {
+        Route::aliasMiddleware(
+            'persist-locale',
+            PersistLocale::class
+        );
+
+        Route::aliasMiddleware(
+            'validate-qrcode',
+            ValidateQRCode::class
+        );
+
+        Route::aliasMiddleware(
+            'validate-session-uuid',
+            ValidateSessionUuid::class
+        );
     }
 
     protected function loadViews()
