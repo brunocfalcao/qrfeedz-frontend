@@ -18,11 +18,11 @@ class ValidateQRCode
          * active questionnaire in the database.
          */
         $questionnaire = Questionnaire::firstWhere('uuid', $uuid);
-        if (!$questionnaire) {
+        if (! $questionnaire) {
             abort(403, 'QR Code unknown');
         }
 
-        if (!$questionnaire->isValid()) {
+        if (! $questionnaire->isValid()) {
             abort('403', 'QR Code invalid');
         }
 
