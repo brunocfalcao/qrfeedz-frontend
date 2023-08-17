@@ -12,5 +12,8 @@ export default defineConfig({
                 'resources/**'
             ]
         })
-    ]
+    ],
+    build: {
+        outDir: 'public/vendor/qrfeedz-frontend'
+    }
 });
