@@ -5,7 +5,9 @@ namespace QRFeedz\Frontend;
 use Brunocfalcao\Cerebrus\Cerebrus;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
 use QRFeedz\Foundation\Abstracts\QRFeedzServiceProvider;
+use QRFeedz\Frontend\Livewire\Components\Containers\HeaderAndFooter;
 use QRFeedz\Frontend\Middleware\PersistLocale;
 use QRFeedz\Frontend\Middleware\ValidateQRCode;
 use QRFeedz\Frontend\Middleware\ValidateSessionUuid;
@@ -18,6 +20,7 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
         $this->overrideResources();
         $this->registerAnonymousBladeComponents();
         $this->registerMiddlewareAliases();
+        $this->registerLivewireComponents();
     }
 
     public function register()
@@ -32,6 +35,11 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
              */
             return new Cerebrus();
         });
+    }
+
+    protected function registerLivewireComponents()
+    {
+        Livewire::component('header-and-footer', HeaderAndFooter::class);
     }
 
     protected function registerMiddlewareAliases()
@@ -70,7 +78,7 @@ class FrontendServiceProvider extends QRFeedzServiceProvider
     protected function registerAnonymousBladeComponents()
     {
         Blade::anonymousComponentPath(
-            __DIR__.'/../resources/views',
+            __DIR__.'/../resources/views/components',
             'qrfeedz'
         );
     }

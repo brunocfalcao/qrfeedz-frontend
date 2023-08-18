@@ -5,7 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     @vite('resources/css/app.css')
-    <title>{{ $attributes->get('title', config('app.name')) }}</title>
+    <title>{{ $questionnaire->name }}</title>
     <style>
         html, body {
             height: 100%;

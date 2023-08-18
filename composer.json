@@ -18,6 +18,7 @@
     "require": {
         "php": "^8.1",
         "illuminate/contracts": "^10.0",
+        "livewire/livewire": "^2.12",
         "brunocfalcao/cerebrus": "dev-master",
         "brunocfalcao/laravel-helpers": "dev-master",
         "brunocfalcao/laravel-tracer": "dev-master",

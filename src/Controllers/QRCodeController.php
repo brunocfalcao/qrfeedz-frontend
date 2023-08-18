@@ -24,7 +24,7 @@ class QRCodeController extends Controller
         $this->middleware('validate-qrcode')->only('go');
 
         // Validate if the session uuid exists.
-        $this->middleware('validate-session-uuid')->only('renderPageInstance');
+        $this->middleware('validate-session-uuid')->only('render');
     }
 
     /**
@@ -34,27 +34,49 @@ class QRCodeController extends Controller
      * to generate a unique ID that is session persisted. This unique ID will
      * have a timespan of 1 hour. Then it will expire and the visitor will not
      * be able to continue, or start, the questionnaire.
+     *
+     * This method is validated by the middleware validate-qrcode so if this
+     * runs it's because the uuid belongs to a valid questionnaire.
      */
     public function go(Request $request, string $uuid)
     {
         $session = new Cerebrus();
 
+        /**
+         * Set the questionnaire uuid into session for later middleware
+         * 'validate-session-uuid' validation. It will be active for
+         * 60 minutes.
+         */
         $session->set('uuid', $uuid, 3600);
 
         /**
-         * Obtain the first page instance uuid to be rendered. The questionnaire
-         * existance validation is already made by the middleware validate-qrcode.
+         * Obtain questionnaire. The middleware already ensured that the
+         * questionnaire is valid and active.
          */
         $questionnaire = Questionnaire::firstWhere('uuid', $uuid);
 
-        $firstPageInstance = $questionnaire->pageInstances()
-                                           ->orderBy('index')
-                                           ->first();
+        /**
+         * Put the questionnaire into session. Everything works with the
+         * questionnaire in session and NOT using the uuid as a route
+         * parameter or a querystring value.
+         */
+        $session = new Cerebrus();
+        $session->set('questionnaire', $questionnaire);
 
-        return redirect(route('qrcode.render-page-instance', ['uuid' => $firstPageInstance->uuid]));
+        /**
+         * Redirect to the render questionnare url. The middleware
+         * 'validate-session-uuid' will be triggered.
+         */
+        return redirect(route('qrcode.render'));
     }
 
-    public function renderPageInstance(Request $request, string $uuid)
+    public function render(Request $request)
+    {
+        return view('qrfeedz-frontend::questionnaire')
+                ->with('questionnaire', Questionnaire::fromSession());
+    }
+
+    public function updateData(Request $request, string $data)
     {
     }
 }

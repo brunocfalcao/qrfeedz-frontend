@@ -14,6 +14,6 @@ class ValidateSessionUuid
 
         return ($session->has('uuid')) ?
             $next($request) :
-            abort('403', 'Looks like your survey expired, please try again');
+            abort('403', 'Looks like your questionnaire expired, please try again');
     }
 }
