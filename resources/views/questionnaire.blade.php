@@ -20,9 +20,22 @@
             </div>
         @endenv
 
-        <x-qrfeedz::containers.header-and-footer :questionnaire="$questionnaire">
+        {{--
+            For now we always use the same header-content-footer container,
+            and inside each container there will be the page instances
+            collection. The option to fork the page
+        --}}
+        <x-qrfeedz::containers.header-and-footer>
 
-            komeke!
+            @foreach($questionnaire->pageInstances as $pageInstance)
+
+            {{-- The first page index is shown, but  --}}
+
+            <div class="{{ !$loop->first ? 'hidden' : 'visible' }}" id="page-instance-{{ $pageInstance->uuid }}" page-instance-index={{ $pageInstance->index }}>
+                <x-dynamic-component :component="'qrfeedz-frontend::' . $pageInstance->view_component" :questionnaire="$questionnaire" :page-instance="$pageInstance" :loop="$loop" />
+            </div>
+
+            @endforeach
 
         </x-qrfeedz::containers.header-and-footer>
 
