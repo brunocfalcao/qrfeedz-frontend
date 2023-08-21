@@ -12,18 +12,13 @@ class ValidateQRCode
     {
         $uuid = $request->route('uuid');
 
-        /**
-         * For non-production environments we will accept a querystring key
-         * called first. If it is present then we will return the first
-         * active questionnaire in the database.
-         */
         $questionnaire = Questionnaire::firstWhere('uuid', $uuid);
         if (! $questionnaire) {
-            abort(403, 'QR Code unknown');
+            abort(403, 'QR Code unknown, you might wanna check that');
         }
 
         if (! $questionnaire->isValid()) {
-            abort('403', 'QR Code invalid');
+            abort('403', 'QR Code invalid, you might wanna check that');
         }
 
         return $next($request);

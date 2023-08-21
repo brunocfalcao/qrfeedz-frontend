@@ -17,6 +17,11 @@ module.exports = {
                 'h-sm': {'raw': '(max-height: 641px)'},
                 'h-md': {'raw': '(min-height: 642px)'}
             },
+            borderRadius: {
+                '4xl': '2rem',
+                '5xl': '2.5rem',
+                '6xl': '3rem'
+            }
         },
     },
     variants: {

@@ -7,11 +7,70 @@
 import './bootstrap';
 
 import.meta.glob([
-  '../images/**'
-  ]);
+    '../images/**'
+]);
 
 // https://animxyz.com/docs
 import '@animxyz/core'
+
+// https://swiperjs.com/get-started
+import Swiper from 'swiper/bundle'
+import 'swiper/css/bundle'
+
+var swiperContainer = document.querySelector('.main-swiper');
+
+var swiper = new Swiper(".main-swiper", {
+    direction: "vertical",
+    mousewheel: false,
+    allowTouchMove: false,  // Disable swiping by touch
+    simulateTouch: false,   // Disable simulated touch interactions
+    allowSlidePrev: true,   // Enable sliding to the previous slide
+    allowSlideNext: true,   // Enable sliding to the next slide
+    keyboard: {
+        enabled: false      // Disable keyboard navigation
+    },
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    speed: 750, // Set the transition duration in milliseconds
+    effect: 'slide', // Set the transition effect
+    cubeEffect: {
+        slideShadows: false,
+    },
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+    },
+    flipEffect: {
+        slideShadows: false,
+        limitRotation: true,
+    }
+});
+
+swiper.on('slideChange', function () {
+    var totalSlides = swiper.slides.length;
+    var activeSlideIndex = swiper.activeIndex;
+    var progressPercentage = (activeSlideIndex / (totalSlides - 1)) * 100;
+    var progressBar = document.querySelector('.progress-bar');
+    progressBar.style.width = progressPercentage + '%';
+});
+
+swiper.on('init', function () {
+    var totalSlides = swiper.slides.length;
+    var activeSlideIndex = swiper.activeIndex;
+    var progressPercentage = (activeSlideIndex / (totalSlides - 1)) * 100;
+    var progressBar = document.querySelector('.progress-bar');
+    progressBar.style.width = progressPercentage + '%';
+});
+
+swiper.init();
+
+// Access the swiper instance on the HTML container element
+var swiperInstance = swiperContainer.swiper;
 
 // Wait for the DOM to be ready before executing the rest of the code
 document.addEventListener('DOMContentLoaded', function() {
@@ -59,16 +118,32 @@ document.addEventListener('DOMContentLoaded', function() {
         lockPortraitMode();
     }
 
+    // Swiper buttons.
+    var nextButton = document.querySelector('button[name="slide-next"]');
+    var previousButton = document.querySelector('button[name="slide-previous"]');
+
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            swiperInstance.slideNext();
+        });
+    }
+
+    if (previousButton) {
+        previousButton.addEventListener('click', function() {
+            swiperInstance.slidePrev();
+        });
+    }
+
 });
 
 function lockPortraitMode() {
-  // Check if screen orientation API is supported
-  if (screen.orientation) {
-    // Lock the screen to portrait mode
-    screen.orientation.lock("portrait").then(function() {
-      console.log("Screen orientation locked to portrait");
-    }).catch(function(error) {
-      console.error("Failed to lock screen orientation: " + error);
-    });
-  }
+    // Check if screen orientation API is supported
+    if (screen.orientation) {
+        // Lock the screen to portrait mode
+        screen.orientation.lock("portrait").then(function() {
+            console.log("Screen orientation locked to portrait");
+        }).catch(function(error) {
+            console.error("Failed to lock screen orientation: " + error);
+        });
+    }
 }

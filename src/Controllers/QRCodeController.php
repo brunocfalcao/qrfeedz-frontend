@@ -47,7 +47,12 @@ class QRCodeController extends Controller
          * 'validate-session-uuid' validation. It will be active for
          * 60 minutes.
          */
-        $session->set('uuid', $uuid, 3600);
+        $session->set(
+            'uuid',
+            $uuid,
+            // In non-production is 4 hours for testing reasons.
+            app()->environment() == 'production' ? 3600 : 3600 * 4
+        );
 
         /**
          * Obtain questionnaire. The middleware already ensured that the
@@ -56,12 +61,17 @@ class QRCodeController extends Controller
         $questionnaire = Questionnaire::firstWhere('uuid', $uuid);
 
         /**
-         * Put the questionnaire into session. Everything works with the
-         * questionnaire in session and NOT using the uuid as a route
-         * parameter or a querystring value.
+         * Put the questionnaire into session. The questionnaire is passed
+         * to the questionnaire view data, but if necessary it can also
+         * be accessed by the session key.
          */
         $session = new Cerebrus();
-        $session->set('questionnaire', $questionnaire);
+        $session->set(
+            'questionnaire',
+            $questionnaire,
+            // In non-production is 4 hours for testing reasons.
+            app()->environment() == 'production' ? 3600 : 3600 * 4
+        );
 
         /**
          * Redirect to the render questionnare url. The middleware

@@ -14,6 +14,12 @@
 
     <x-qrfeedz::elements.body class="flex flex-col h-screen overflow-hidden">
 
+        <!--
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    -->
+
         @env('local')
             <div id="app" class="absolute text-sm">
                 <resolution-display></resolution-display>
@@ -27,15 +33,20 @@
         --}}
         <x-qrfeedz::containers.header-and-footer>
 
-            @foreach($questionnaire->pageInstances as $pageInstance)
+            {{-- Swiper instantiation --}}
+            <div class="swiper main-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    @foreach($questionnaire->pageInstances as $pageInstance)
 
-            {{-- The first page index is shown, but  --}}
+                    {{-- The first page index is shown, but  --}}
+                    <div name="page-instance" class="swiper-slide bg-red-300 p-2" id="page-instance-{{ $pageInstance->uuid }}" page-instance-index={{ $pageInstance->index }}>
+                        <x-dynamic-component :component="'qrfeedz-frontend::' . $pageInstance->view_component" :questionnaire="$questionnaire" :page-instance="$pageInstance" />
+                    </div>
 
-            <div class="{{ !$loop->first ? 'hidden' : 'visible' }}" id="page-instance-{{ $pageInstance->uuid }}" page-instance-index={{ $pageInstance->index }}>
-                <x-dynamic-component :component="'qrfeedz-frontend::' . $pageInstance->view_component" :questionnaire="$questionnaire" :page-instance="$pageInstance" :loop="$loop" />
+                    @endforeach
+                </div>
             </div>
-
-            @endforeach
 
         </x-qrfeedz::containers.header-and-footer>
 
